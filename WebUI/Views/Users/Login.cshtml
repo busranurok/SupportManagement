@@ -1,0 +1,14 @@
+﻿@model WebUI.Models.LoginViewModel
+@{
+    Layout = null;
+}
+@using (Html.BeginForm("Login", "Users", FormMethod.Post))
+{
+<input type="text" asp-for="UserName" />
+<br />
+<br />
+<input type ="text" asp-for="Password" />
+<br />
+<br />
+<button class="login">Giriş</button>
+}

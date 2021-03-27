@@ -1,0 +1,14 @@
+/Users/hbo/Projects/SupportManagement/DataAccess/bin/Debug/netcoreapp3.1/DataAccess.deps.json
+/Users/hbo/Projects/SupportManagement/DataAccess/bin/Debug/netcoreapp3.1/DataAccess.dll
+/Users/hbo/Projects/SupportManagement/DataAccess/bin/Debug/netcoreapp3.1/DataAccess.pdb
+/Users/hbo/Projects/SupportManagement/DataAccess/bin/Debug/netcoreapp3.1/Core.dll
+/Users/hbo/Projects/SupportManagement/DataAccess/bin/Debug/netcoreapp3.1/Entities.dll
+/Users/hbo/Projects/SupportManagement/DataAccess/bin/Debug/netcoreapp3.1/Entities.pdb
+/Users/hbo/Projects/SupportManagement/DataAccess/bin/Debug/netcoreapp3.1/Core.pdb
+/Users/hbo/Projects/SupportManagement/DataAccess/obj/Debug/netcoreapp3.1/DataAccess.csprojAssemblyReference.cache
+/Users/hbo/Projects/SupportManagement/DataAccess/obj/Debug/netcoreapp3.1/DataAccess.AssemblyInfoInputs.cache
+/Users/hbo/Projects/SupportManagement/DataAccess/obj/Debug/netcoreapp3.1/DataAccess.AssemblyInfo.cs
+/Users/hbo/Projects/SupportManagement/DataAccess/obj/Debug/netcoreapp3.1/DataAccess.csproj.CoreCompileInputs.cache
+/Users/hbo/Projects/SupportManagement/DataAccess/obj/Debug/netcoreapp3.1/DataAccess.csproj.CopyComplete
+/Users/hbo/Projects/SupportManagement/DataAccess/obj/Debug/netcoreapp3.1/DataAccess.dll
+/Users/hbo/Projects/SupportManagement/DataAccess/obj/Debug/netcoreapp3.1/DataAccess.pdb

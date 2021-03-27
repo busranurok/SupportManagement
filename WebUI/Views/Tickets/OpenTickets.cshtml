@@ -1,0 +1,11 @@
+﻿@model WebUI.Models.TicketsOpenTicketsViewModel
+
+@foreach (var item in Model.OpenTickets)
+{
+    @item.Id
+    <br />
+    @item.Subject
+    <br />
+    @item.Body
+    <br />
+}

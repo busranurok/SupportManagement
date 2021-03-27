@@ -1,0 +1,11 @@
+﻿@model WebUI.Models.TicketsTicketsByLastWeekViewModel
+
+@foreach (var item in Model.TicketsByLastWeek)
+{
+    @item.Id
+    <br />
+    @item.Subject
+    <br />
+    @item.Body
+    <br />
+}
