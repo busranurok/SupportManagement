@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Core.Aspects.Autofac.IoC;
+using Core.DependencyResolvers;
+using Core.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +35,10 @@ namespace WebUI
                 //Süre 1 gün olarak belirlendi
                 option.IdleTimeout = TimeSpan.FromDays(1);
             });
+            services.AddDependencyResolvers(new ICoreModule[]
+               {
+                    new CoreModule(),
+           }); ;
             services.AddMvc();
         }
 

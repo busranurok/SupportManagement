@@ -1,6 +1,194 @@
 ﻿@model IEnumerable<Ticket>
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+
+<!--MainContent-->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="row card-header">
+                        <div class="col-3">
+                            <h3 class="card-title">Tüm Kayıtlar Listesi</h3>
+                        </div>
+                        <div class="col-7">
+
+                        </div>
+                        <div class="col-1">
+                            <div class="card-tools">
+                                <div class="input-group input-group-sm" style="width: 150px;">
+                                    <input type="text" name="table_search" class="form-control float-right" placeholder="Ara">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-default">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="exampleSelectRounded0">Oluşturulma Zamanı</label>
+                                <select class="custom-select rounded-0" id="exampleSelectRounded0">
+                                    <option>Seçiniz...</option>
+                                    <option>Bu hafta</option>
+                                    <option>Bu ay</option>
+                                    <option>Son 3 ay</option>
+                                    <option>Son 6 ay</option>
+                                    <option>Son 1 yıl</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="exampleSelectRounded0">Müşteri</label>
+                                <select class="custom-select rounded-0" id="exampleSelectRounded0">
+                                    <option>Seçiniz...</option>
+                                    <option>Hasan</option>
+                                    <option>Büşra</option>
+                                    <option>Basri</option>
+                                    <option>Duman</option>
+                                    <option>Tospik</option>
+                                    <option>Şakir</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="exampleSelectRounded0">Üstlenen Kullanıcı</label>
+                                <select class="custom-select rounded-0" id="exampleSelectRounded0">
+                                    <option>Seçiniz...</option>
+                                    <option>Hasan</option>
+                                    <option>Büşra</option>
+                                    <option>Basri</option>
+                                    <option>Duman</option>
+                                    <option>Tospik</option>
+                                    <option>Şakir</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group">
+                                <label for="exampleSelectRounded0">Kayıt Durumu</label>
+                                <select class="custom-select rounded-0" id="exampleSelectRounded0">
+                                    <option>Seçiniz...</option>
+                                    <option>Kapandı</option>
+                                    <option>Açık</option>
+                                    <option>Beklemede</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <div class="form-group">
+                                <label for="exampleSelectRounded0">Filtreleme</label>
+                                <br />
+                                <button type="submit" class="btn btn-default">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card-body table-responsive p-0">
+                            <table class="table table-hover text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Ticket Başlığı</th>
+                                        <th>Oluşturan Kullanıcı</th>
+                                        <th>Oluşturma Tarihi</th>
+                                        <th>Detay</th>
+                                        <th>Düzenle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Kargo</td>
+                                        <td>Hasan Basri OK</td>
+                                        <td>11-7-2014</td>
+                                        <td>
+                                            <button type="submit" class="btn btn-default">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="submit" class="btn btn-default">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Teknik Sorun</td>
+                                        <td>Büşra Nur OK</td>
+                                        <td>11-7-2014</td>
+                                        <td>
+                                            <button type="submit" class="btn btn-default">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="submit" class="btn btn-default">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kırık Ürün</td>
+                                        <td>Duman OK</td>
+                                        <td>11-7-2014</td>
+                                        <td>
+                                            <button type="submit" class="btn btn-default">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="submit" class="btn btn-default">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sipariş Destek</td>
+                                        <td>Şakir OK</td>
+                                        <td>11-7-2014</td>
+                                        <td>
+                                            <button type="submit" class="btn btn-default">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="submit" class="btn btn-default">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Stok Bilgisi</td>
+                                        <td>Tospik OK</td>
+                                        <td>11-7-2014</td>
+                                        <td>
+                                            <button type="submit" class="btn btn-default">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="submit" class="btn btn-default">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                </div>
+                <!-- /.card -->
+            </div>
+            <!--/.col-12-->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+<!--/.content-->

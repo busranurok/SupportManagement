@@ -25,6 +25,20 @@
     <Folder Include="Utilities\Security\Jwt\" />
     <Folder Include="Utilities\Security\Encyption\" />
     <Folder Include="Utilities\Hashing\" />
+    <Folder Include="Utilities\Messages\" />
+    <Folder Include="Aspects\Autofac\Transaction\" />
+    <Folder Include="Aspects\Autofac\IoC\" />
+    <Folder Include="DependencyResolvers\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="CrossCuttingConcerns\Caching\" />
+    <Folder Include="CrossCuttingConcerns\Caching\Microsoft\" />
+    <Folder Include="Aspects\Autofac\Caching\" />
+    <Folder Include="Aspects\Autofac\Performance\" />
+    <Folder Include="CrossCuttingConcerns\Logging\" />
+    <Folder Include="CrossCuttingConcerns\Logging\Log4Net\" />
+    <Folder Include="CrossCuttingConcerns\Logging\Log4Net\Layouts\" />
+    <Folder Include="CrossCuttingConcerns\Logging\Log4Net\Loggers\" />
+    <Folder Include="Aspects\Autofac\Logging\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />
@@ -34,5 +48,9 @@
     <PackageReference Include="FluentValidation" Version="9.5.2" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.9.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.9.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="log4net" Version="2.0.12" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 </Project>

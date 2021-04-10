@@ -19,7 +19,8 @@ namespace Core.Utilities.Interceptors
             var methodAttributes = type.GetMethod(method.Name)
                 .GetCustomAttributes<MethodInterceptionBaseAttribute>(true);
             classAttributes.AddRange(methodAttributes);
-            
+
+            //bizim için priotiy özelliğini verdiğimizde managerde sıralı gelsin
             return classAttributes.OrderBy(x => x.Priority).ToArray();
         }
 

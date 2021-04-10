@@ -21,12 +21,13 @@ namespace Core.Utilities.Security.Jwt
             Configuration = configuration;
             //.net core tokenoptions bilgilerini alıp bu nesneye bind ediyor.
             _tokenOptions = Configuration.GetSection(key: "TokenOptions").Get<TokenOptions>();
-            //şimdi ye 50 dk olarak ekle bunu diyoruz. 50 dk sonra tarihim geçecek.
-            _accesTokenExpiration = DateTime.Now.AddMinutes(_tokenOptions.AccessTokenExpiration);
+            
         }
 
         public AccessToken CreateToken(User user)
         {
+            //şimdi ye 50 dk olarak ekle bunu diyoruz. 50 dk sonra tarihim geçecek.
+            _accesTokenExpiration = DateTime.Now.AddMinutes(_tokenOptions.AccessTokenExpiration);
             var securityKey = SecurityKeyHelper.CreateSecurityKey(_tokenOptions.SecurityKey);
             var signingCredentials = SigningCredentialsHelper.CreateSigningCredentials(securityKey);
             var jwt = CreateJwtSecurityToken(_tokenOptions, user, signingCredentials);

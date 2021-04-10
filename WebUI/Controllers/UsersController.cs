@@ -20,6 +20,12 @@ namespace WebUI.Controllers
             _userService = userService;
         }
 
+
+        public IActionResult UserList()
+        {
+            return View();
+        }
+
         [HttpGet]
         public IActionResult Login()
         {

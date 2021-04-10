@@ -57,5 +57,12 @@ namespace Business.Concrete
             return new SuccessResult(Messages.UserDeleted);
         }
 
+        //validation
+        //yapısal durum
+        //username boş geçilmemeli
+        //bunu  urada yazmamamızın sebebi web api kullandık ui kullandığımızda 2 defa yazmamak adına
+        //business ın bir girdisidir ama business değildir.
+        //propertylerde requi.. diyer yazar isek business a ait alan şeyleri entity de yazmış oluruz ki bu da solid e ters
+
     }
 }

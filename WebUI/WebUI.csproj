@@ -20,5 +20,22 @@
     <Folder Include="Views\Users\" />
     <Folder Include="Views\Home\" />
     <Folder Include="Views\Tickets\" />
+    <Folder Include="Views\Customers\" />
+    <Folder Include="Content\" />
+    <Folder Include="Content\build\" />
+    <Folder Include="Content\build\config\" />
+    <Folder Include="Content\build\js\" />
+    <Folder Include="Content\build\npm\" />
+    <Folder Include="Content\build\scss\" />
+    <Folder Include="Content\dist\" />
+    <Folder Include="Content\dist\css\" />
+    <Folder Include="Content\dist\img\" />
+    <Folder Include="Content\dist\js\" />
+    <Folder Include="Content\plugins\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="wwwroot\js\site.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>

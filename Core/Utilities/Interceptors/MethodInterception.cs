@@ -9,6 +9,7 @@ namespace Core.Utilities.Interceptors
         {
         }
 
+        //invocation: sıklıkla çalıştırmak istediğimiz metod
         protected virtual void OnBefore(IInvocation invocation) { }
         protected virtual void OnAfter(IInvocation invocation) { }
         protected virtual void OnException(IInvocation invocation, System.Exception e) { }
@@ -19,6 +20,7 @@ namespace Core.Utilities.Interceptors
             OnBefore(invocation);
             try
             {
+                //metodu çalıştır
                 invocation.Proceed();
             }
             catch (Exception e)

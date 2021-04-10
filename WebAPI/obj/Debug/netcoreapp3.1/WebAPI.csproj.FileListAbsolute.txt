@@ -55,3 +55,9 @@
 /Users/hbo/Projects/SupportManagement/WebAPI/obj/Debug/netcoreapp3.1/WebAPI.dll
 /Users/hbo/Projects/SupportManagement/WebAPI/obj/Debug/netcoreapp3.1/WebAPI.pdb
 /Users/hbo/Projects/SupportManagement/WebAPI/obj/Debug/netcoreapp3.1/WebAPI.genruntimeconfig.cache
+/Users/hbo/Projects/SupportManagement/WebAPI/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/hbo/Projects/SupportManagement/WebAPI/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Protocols.dll
+/Users/hbo/Projects/SupportManagement/WebAPI/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/hbo/Projects/SupportManagement/WebAPI/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
+/Users/hbo/Projects/SupportManagement/WebAPI/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll
+/Users/hbo/Projects/SupportManagement/WebAPI/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll

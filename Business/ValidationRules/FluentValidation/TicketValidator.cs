@@ -8,6 +8,8 @@ namespace Business.ValidationRules.FluentValidation
     {
         public TicketValidator()
         {
+            RuleFor(expression: t => t.Body).Length(50,500);
         }
+
     }
 }

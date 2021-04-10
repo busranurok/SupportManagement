@@ -10,9 +10,9 @@ namespace Core.CrossCuttingConcerns.Validation
 
             //bir doğrulama yapacağım
             var context = new ValidationContext<object>(entity);
-            //bu doğrulamayı carvalidator ü kullanarak yapacağım
-            //CarValidator carValidator = new CarValidator();
-            //carvalidator ü kullanarak ilgili contexti doğrula
+            //bu doğrulamayı uservalidator ü kullanarak yapacağım
+            //userValidator userValidator = new userValidator();
+            //uservalidator ü kullanarak ilgili contexti doğrula
             var result = validator.Validate(context);
             //eğer sonuç geçerli değil ise hata fırlat
             if (!result.IsValid)

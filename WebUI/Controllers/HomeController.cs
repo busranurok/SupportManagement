@@ -15,11 +15,8 @@ namespace WebUI.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            var name = HttpContext.Session.GetString("Name");
-            var model = new HomeIndexViewModel();
-            model.Name = name;
-            return View(model);
-
+            
+            return View();
 
         }
     }

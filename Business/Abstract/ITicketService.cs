@@ -17,5 +17,9 @@ namespace Business.Abstract
         IDataResult<List<Ticket>> GetOpenTickets(int ticketStatusId = 1);
         IDataResult<List<Ticket>> GetClosedTickets(int ticketStatusId = 3);
         IDataResult<List<Ticket>> GetTicketsByLastWeek();
+
+
+        //transaction testi
+        IResult TransactionalOperation(Ticket ticket);
     }
 }

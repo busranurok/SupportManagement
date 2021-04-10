@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Core.Aspects.Autofac.IoC;
+using Core.DependencyResolvers;
+using Core.Extensions;
 using Core.Utilities.Security.Encyption;
 using Core.Utilities.Security.Jwt;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -31,11 +34,11 @@ namespace WebAPI
         {
             services.AddControllers();
             //bizim apimize izin verdiğimiz yer dışında bir istek geldiğinde izin verilmez
-            services.AddCors(options=>
+            services.AddCors(options =>
             {
                 //withorigin: istek yapılan host
                 //domain verilir
-                options.AddPolicy(name: "AllowOrigin", configurePolicy: builder=> builder.WithOrigins("http://localhost:3000"));
+                options.AddPolicy(name: "AllowOrigin", configurePolicy: builder => builder.WithOrigins("http://localhost:3000"));
             });
 
             var tokenOptions = Configuration.GetSection(key: "TokenOptions").Get<TokenOptions>();
@@ -52,7 +55,14 @@ namespace WebAPI
                     IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
                 };
             });
+
+            //yarın ICoremodule nin içinde başka modüllerim olur ise onu da buraya ekle diyebiliriz
+            services.AddDependencyResolvers(new ICoreModule[]
+                {
+                    new CoreModule(),
+            }); ;
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -64,7 +74,7 @@ namespace WebAPI
 
             //buradan gelen her türlü talebe cevap veririz.
             //header: delete,put,post,get
-            app.UseCors(builder=> builder.WithOrigins("http://localhost:3000").AllowAnyHeader());
+            app.UseCors(builder => builder.WithOrigins("http://localhost:3000").AllowAnyHeader());
 
             app.UseHttpsRedirection();
 
@@ -82,4 +92,5 @@ namespace WebAPI
             });
         }
     }
+
 }

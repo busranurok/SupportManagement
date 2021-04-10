@@ -1,11 +1,248 @@
 ﻿@model WebUI.Models.TicketsOpenTicketsViewModel
+<!--MainContent-->
+<section class="content" data-select2-id="25">
+    <div class="container-fluid">
+        <form action="enhanced-results.html" data-select2-id="23">
+            <div class="form-group">
+                <div class="input-group input-group-lg">
+                    <input type="search" class="form-control form-control-lg" placeholder="Aranacak kelimeleri giriniz." value="Aranacak kelimeleri giriniz.">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-lg btn-default">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="card card-default">
+            <div class="card-header">
+                <h3 class="card-title">Filtreleme İşlemleri</h3>
 
-@foreach (var item in Model.OpenTickets)
-{
-    @item.Id
-    <br />
-    @item.Subject
-    <br />
-    @item.Body
-    <br />
-}
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Oluşturulma Zamanı</label>
+                            <select class="form-control createdDate" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                <option selected="selected" value="0">Seçiniz...</option>
+                                <option data-select2-id="61">Alaska</option>
+                                <option data-select2-id="62">California</option>
+                                <option data-select2-id="63">Delaware</option>
+                                <option data-select2-id="64">Tennessee</option>
+                                <option data-select2-id="65">Texas</option>
+                                <option data-select2-id="66">Washington</option>
+                            </select>
+                        </div>
+                        <!-- /.form-group -->
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Müşteri</label>
+                            <select class="form-control customer" style="width: 100%;" data-select2-id="19" tabindex="-1" aria-hidden="true">
+                                <option selected="selected" value="0">Seçiniz...</option>
+                                <option data-select2-id="47">Hasan</option>
+                                <option data-select2-id="48">Büşra</option>
+                                <option data-select2-id="21">Duman</option>
+                                <option data-select2-id="49">Şakir</option>
+                                <option data-select2-id="50">Rıfkı</option>
+                                <option data-select2-id="51">Tospik</option>
+                            </select>
+                        </div>
+                        <!-- /.form-group -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Üstlenen Kullanıcı</label>
+                            <select class="form-control assignedUser" style="width: 100%;" data-select2-id="19" tabindex="-1" aria-hidden="true">
+                                <option selected="selected" value="0">Seçiniz...</option>
+                                <option value="47">Hasan</option>
+                                <option value="48">Büşra</option>
+                                <option value="21">Duman</option>
+                                <option value="49">Şakir</option>
+                                <option value="50">Rıfkı</option>
+                                <option value="51">Tospik</option>
+                            </select>
+                        </div>
+                        <!-- /.form-group -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <a class="btn btn-primary btn-sm form-control" href="#">
+                                <i class="fas fa-search">
+                                </i>
+                                Filtrele
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <div class="row mt-3">
+            <!-- Default box -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Açık Kayıtlar Listesi</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <a class="btn btn-primary btn-sm" href="#">
+                            <i class="fas fa-plus">
+                            </i>
+                            Ekle
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-striped projects">
+                        <thead>
+                            <tr>
+                                <th style="width: 10%">
+                                    
+                                </th>
+                                <th style="width: 15%">
+                                    Oluşturan Kullanıcı
+                                </th>
+                                <th style="width: 15%">
+                                    Kayıt Başlığı
+                                </th>
+                                <th style="width: 8%">
+                                    Oluşturma Tarihi
+                                </th>
+                                <th style="width: 15%">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <img alt="Avatar" class="table-avatar" src="../../dist/img/avatar3.png">
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    Hasan Basri OK
+                                </td>
+                                <td>
+                                    Kargo Bilgisi
+                                </td>
+                                <td>
+                                    01.01.2019
+                                </td>
+                                <td class="project-actions text-right">
+                                    <a class="btn btn-primary btn-sm" href="#">
+                                        <i class="fas fa-folder">
+                                        </i>
+                                        Detay
+                                    </a>
+                                    <a class="btn btn-info btn-sm" href="#">
+                                        <i class="fas fa-pencil-alt">
+                                        </i>
+                                        Düzenle
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <img alt="Avatar" class="table-avatar" src="../../dist/img/avatar.png">
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    Büşra Nur OK
+                                </td>
+                                <td>
+                                    Stok Bilgisi
+                                </td>
+                                <td>
+                                    01.01.2019
+                                </td>
+                                <td class="project-actions text-right">
+                                    <a class="btn btn-primary btn-sm" href="#">
+                                        <i class="fas fa-folder">
+                                        </i>
+                                        Detay
+                                    </a>
+                                    <a class="btn btn-info btn-sm" href="#">
+                                        <i class="fas fa-pencil-alt">
+                                        </i>
+                                        Düzenle
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <img alt="Avatar" class="table-avatar" src="../../dist/img/avatar.png">
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    Duman Can OK
+                                </td>
+                                <td>
+                                    İade Bilgisi
+                                </td>
+                                <td>
+                                    01.01.2019
+                                </td>
+                                <td class="project-actions text-right">
+                                    <a class="btn btn-primary btn-sm" href="#">
+                                        <i class="fas fa-folder">
+                                        </i>
+                                        Detay
+                                    </a>
+                                    <a class="btn btn-info btn-sm" href="#">
+                                        <i class="fas fa-pencil-alt">
+                                        </i>
+                                        Düzenle
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer clearfix">
+                    <ul class="pagination pagination-sm m-0 float-right">
+                        <li class="page-item"><a class="page-link" href="#">«</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">»</a></li>
+                    </ul>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+    </div>
+</section>
+
+
+<script>
+    $(document).ready(function () {
+        $('.assignedUser').select2();
+        $('.customer').select2();
+        $('.createdDate').select2();
+    });
+</script>
+
+<!--/.content-->

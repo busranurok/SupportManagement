@@ -7,6 +7,8 @@ namespace Entities.Concrete
     {
         public Ticket()
         {
+            this.CompletedDate = null;
+            this.OwnerId = null;
         }
 
         public int Id { get; set; }

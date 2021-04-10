@@ -77,3 +77,10 @@
 /Users/hbo/Projects/SupportManagement/WebUI/obj/Debug/netcoreapp3.1/WebUI.dll
 /Users/hbo/Projects/SupportManagement/WebUI/obj/Debug/netcoreapp3.1/WebUI.pdb
 /Users/hbo/Projects/SupportManagement/WebUI/obj/Debug/netcoreapp3.1/WebUI.genruntimeconfig.cache
+/Users/hbo/Projects/SupportManagement/WebUI/bin/Debug/netcoreapp3.1/wwwroot/js/site.js
+/Users/hbo/Projects/SupportManagement/WebUI/bin/Debug/netcoreapp3.1/log4net.dll
+/Users/hbo/Projects/SupportManagement/WebUI/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll
+/Users/hbo/Projects/SupportManagement/WebUI/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/hbo/Projects/SupportManagement/WebUI/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
+/Users/hbo/Projects/SupportManagement/WebUI/obj/Debug/netcoreapp3.1/Razor/Views/Customers/CustomerList.cshtml.g.cs
+/Users/hbo/Projects/SupportManagement/WebUI/obj/Debug/netcoreapp3.1/Razor/Views/Users/UserList.cshtml.g.cs
