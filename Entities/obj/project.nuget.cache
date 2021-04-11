@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "K6yvhTkqpGDT7CT8c06mxaZYJNC1kN0doJAP7j+IyIz5UuAWMoPtuoIy64p0/IAiHvZU6FoxIj6UBPKzw8iKCA==",
+  "dgSpecHash": "/Z+EFSmXftC1QLq9T6LUmVkWQwnm3DIt8Q1RmrOyNIsA5LA3mibd+mtC3IU5XlatVju3wSGQ0A+H6HVfdFYA5A==",
   "success": true,
-  "projectFilePath": "/Users/hbo/Projects/SupportManagement/Entities/Entities.csproj",
+  "projectFilePath": "/Users/hbo/Desktop/netProjects/SupportManagement/Entities/Entities.csproj",
   "expectedPackageFiles": [
     "/Users/hbo/.nuget/packages/autofac/6.1.0/autofac.6.1.0.nupkg.sha512",
     "/Users/hbo/.nuget/packages/autofac.extensions.dependencyinjection/7.1.0/autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",

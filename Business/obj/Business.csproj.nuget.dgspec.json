@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/hbo/Projects/SupportManagement/Business/Business.csproj": {}
+    "/Users/hbo/Desktop/netProjects/SupportManagement/Business/Business.csproj": {}
   },
   "projects": {
-    "/Users/hbo/Projects/SupportManagement/Business/Business.csproj": {
+    "/Users/hbo/Desktop/netProjects/SupportManagement/Business/Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/hbo/Projects/SupportManagement/Business/Business.csproj",
+        "projectUniqueName": "/Users/hbo/Desktop/netProjects/SupportManagement/Business/Business.csproj",
         "projectName": "Business",
-        "projectPath": "/Users/hbo/Projects/SupportManagement/Business/Business.csproj",
+        "projectPath": "/Users/hbo/Desktop/netProjects/SupportManagement/Business/Business.csproj",
         "packagesPath": "/Users/hbo/.nuget/packages/",
-        "outputPath": "/Users/hbo/Projects/SupportManagement/Business/obj/",
+        "outputPath": "/Users/hbo/Desktop/netProjects/SupportManagement/Business/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/hbo/.config/NuGet/NuGet.Config"
@@ -26,14 +26,14 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "/Users/hbo/Projects/SupportManagement/Core/Core.csproj": {
-                "projectPath": "/Users/hbo/Projects/SupportManagement/Core/Core.csproj"
+              "/Users/hbo/Desktop/netProjects/SupportManagement/Core/Core.csproj": {
+                "projectPath": "/Users/hbo/Desktop/netProjects/SupportManagement/Core/Core.csproj"
               },
-              "/Users/hbo/Projects/SupportManagement/DataAccess/DataAccess.csproj": {
-                "projectPath": "/Users/hbo/Projects/SupportManagement/DataAccess/DataAccess.csproj"
+              "/Users/hbo/Desktop/netProjects/SupportManagement/DataAccess/DataAccess.csproj": {
+                "projectPath": "/Users/hbo/Desktop/netProjects/SupportManagement/DataAccess/DataAccess.csproj"
               },
-              "/Users/hbo/Projects/SupportManagement/Entities/Entities.csproj": {
-                "projectPath": "/Users/hbo/Projects/SupportManagement/Entities/Entities.csproj"
+              "/Users/hbo/Desktop/netProjects/SupportManagement/Entities/Entities.csproj": {
+                "projectPath": "/Users/hbo/Desktop/netProjects/SupportManagement/Entities/Entities.csproj"
               }
             }
           }
@@ -88,14 +88,14 @@
         }
       }
     },
-    "/Users/hbo/Projects/SupportManagement/Core/Core.csproj": {
+    "/Users/hbo/Desktop/netProjects/SupportManagement/Core/Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/hbo/Projects/SupportManagement/Core/Core.csproj",
+        "projectUniqueName": "/Users/hbo/Desktop/netProjects/SupportManagement/Core/Core.csproj",
         "projectName": "Core",
-        "projectPath": "/Users/hbo/Projects/SupportManagement/Core/Core.csproj",
+        "projectPath": "/Users/hbo/Desktop/netProjects/SupportManagement/Core/Core.csproj",
         "packagesPath": "/Users/hbo/.nuget/packages/",
-        "outputPath": "/Users/hbo/Projects/SupportManagement/Core/obj/",
+        "outputPath": "/Users/hbo/Desktop/netProjects/SupportManagement/Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/hbo/.config/NuGet/NuGet.Config"
@@ -186,14 +186,14 @@
         }
       }
     },
-    "/Users/hbo/Projects/SupportManagement/DataAccess/DataAccess.csproj": {
+    "/Users/hbo/Desktop/netProjects/SupportManagement/DataAccess/DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/hbo/Projects/SupportManagement/DataAccess/DataAccess.csproj",
+        "projectUniqueName": "/Users/hbo/Desktop/netProjects/SupportManagement/DataAccess/DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "/Users/hbo/Projects/SupportManagement/DataAccess/DataAccess.csproj",
+        "projectPath": "/Users/hbo/Desktop/netProjects/SupportManagement/DataAccess/DataAccess.csproj",
         "packagesPath": "/Users/hbo/.nuget/packages/",
-        "outputPath": "/Users/hbo/Projects/SupportManagement/DataAccess/obj/",
+        "outputPath": "/Users/hbo/Desktop/netProjects/SupportManagement/DataAccess/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/hbo/.config/NuGet/NuGet.Config"
@@ -208,11 +208,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "/Users/hbo/Projects/SupportManagement/Core/Core.csproj": {
-                "projectPath": "/Users/hbo/Projects/SupportManagement/Core/Core.csproj"
+              "/Users/hbo/Desktop/netProjects/SupportManagement/Core/Core.csproj": {
+                "projectPath": "/Users/hbo/Desktop/netProjects/SupportManagement/Core/Core.csproj"
               },
-              "/Users/hbo/Projects/SupportManagement/Entities/Entities.csproj": {
-                "projectPath": "/Users/hbo/Projects/SupportManagement/Entities/Entities.csproj"
+              "/Users/hbo/Desktop/netProjects/SupportManagement/Entities/Entities.csproj": {
+                "projectPath": "/Users/hbo/Desktop/netProjects/SupportManagement/Entities/Entities.csproj"
               }
             }
           }
@@ -251,14 +251,14 @@
         }
       }
     },
-    "/Users/hbo/Projects/SupportManagement/Entities/Entities.csproj": {
+    "/Users/hbo/Desktop/netProjects/SupportManagement/Entities/Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/hbo/Projects/SupportManagement/Entities/Entities.csproj",
+        "projectUniqueName": "/Users/hbo/Desktop/netProjects/SupportManagement/Entities/Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "/Users/hbo/Projects/SupportManagement/Entities/Entities.csproj",
+        "projectPath": "/Users/hbo/Desktop/netProjects/SupportManagement/Entities/Entities.csproj",
         "packagesPath": "/Users/hbo/.nuget/packages/",
-        "outputPath": "/Users/hbo/Projects/SupportManagement/Entities/obj/",
+        "outputPath": "/Users/hbo/Desktop/netProjects/SupportManagement/Entities/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/hbo/.config/NuGet/NuGet.Config"
@@ -273,8 +273,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "/Users/hbo/Projects/SupportManagement/Core/Core.csproj": {
-                "projectPath": "/Users/hbo/Projects/SupportManagement/Core/Core.csproj"
+              "/Users/hbo/Desktop/netProjects/SupportManagement/Core/Core.csproj": {
+                "projectPath": "/Users/hbo/Desktop/netProjects/SupportManagement/Core/Core.csproj"
               }
             }
           }

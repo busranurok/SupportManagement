@@ -9,5 +9,7 @@ namespace WebUI.Models
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 
         public string Message { get; set; }
+
+        public string ErrorCode { get; set; }
     }
 }

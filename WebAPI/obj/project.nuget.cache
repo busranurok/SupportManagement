@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QoXRQZH/HQz1Kf2Val3T36p5csrxTWyFK3Lx/2Wy8Q6vMHTanGuTlpu1sF4moWM7eDnxZoknhFzzGoO3FE9gsw==",
+  "dgSpecHash": "paVPD5WUoN6XfTlWXX45t7ZYtQ3Thgo+zNalGu7vl47EXne65mQcnY0zanGIeNQf9PPWVxANxgFOAaXM8jvx3g==",
   "success": true,
-  "projectFilePath": "/Users/hbo/Projects/SupportManagement/WebAPI/WebAPI.csproj",
+  "projectFilePath": "/Users/hbo/Desktop/netProjects/SupportManagement/WebAPI/WebAPI.csproj",
   "expectedPackageFiles": [
     "/Users/hbo/.nuget/packages/autofac/6.1.0/autofac.6.1.0.nupkg.sha512",
     "/Users/hbo/.nuget/packages/autofac.extensions.dependencyinjection/7.1.0/autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",

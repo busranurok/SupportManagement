@@ -10,3 +10,15 @@
 /Users/hbo/Projects/SupportManagement/Entities/obj/Debug/netcoreapp3.1/Entities.csproj.CopyComplete
 /Users/hbo/Projects/SupportManagement/Entities/obj/Debug/netcoreapp3.1/Entities.dll
 /Users/hbo/Projects/SupportManagement/Entities/obj/Debug/netcoreapp3.1/Entities.pdb
+/Users/hbo/Desktop/netProjects/SupportManagement/Entities/bin/Debug/netcoreapp3.1/Entities.deps.json
+/Users/hbo/Desktop/netProjects/SupportManagement/Entities/bin/Debug/netcoreapp3.1/Entities.dll
+/Users/hbo/Desktop/netProjects/SupportManagement/Entities/bin/Debug/netcoreapp3.1/Entities.pdb
+/Users/hbo/Desktop/netProjects/SupportManagement/Entities/bin/Debug/netcoreapp3.1/Core.dll
+/Users/hbo/Desktop/netProjects/SupportManagement/Entities/bin/Debug/netcoreapp3.1/Core.pdb
+/Users/hbo/Desktop/netProjects/SupportManagement/Entities/obj/Debug/netcoreapp3.1/Entities.csprojAssemblyReference.cache
+/Users/hbo/Desktop/netProjects/SupportManagement/Entities/obj/Debug/netcoreapp3.1/Entities.AssemblyInfoInputs.cache
+/Users/hbo/Desktop/netProjects/SupportManagement/Entities/obj/Debug/netcoreapp3.1/Entities.AssemblyInfo.cs
+/Users/hbo/Desktop/netProjects/SupportManagement/Entities/obj/Debug/netcoreapp3.1/Entities.csproj.CoreCompileInputs.cache
+/Users/hbo/Desktop/netProjects/SupportManagement/Entities/obj/Debug/netcoreapp3.1/Entities.csproj.CopyComplete
+/Users/hbo/Desktop/netProjects/SupportManagement/Entities/obj/Debug/netcoreapp3.1/Entities.dll
+/Users/hbo/Desktop/netProjects/SupportManagement/Entities/obj/Debug/netcoreapp3.1/Entities.pdb

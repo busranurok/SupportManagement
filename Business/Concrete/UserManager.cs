@@ -7,6 +7,7 @@ using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using DataAccess.Abstract;
 using Core.Entities.Concrete;
+using Core.Utilities.Hashing;
 
 namespace Business.Concrete
 {
@@ -34,9 +35,22 @@ namespace Business.Concrete
             return new SuccessDataResult<User>(_userDal.Get(filter: u=> u.Email == email, true));
         }
 
-        public IDataResult<User> GetUserByEmailAndPassword(string email, byte[] passwordHash)
+        public IDataResult<User> GetUserByEmailAndPassword(string email, string password)
         {
-            return new SuccessDataResult<User>(_userDal.Get(filter: u=> u.Email == email && u.PasswordHash == passwordHash,true));
+            var userToCheck = _userDal.Get(x=> x.Email == email,true);
+
+            if (userToCheck == null)
+            {
+                return new ErrorDataResult<User>(Messages.UserNotFound);
+            }
+
+            if (!HashingHelper.VerifyPasswordHash(password, userToCheck.PasswordHash, userToCheck.PasswordSalt))
+            {
+                return new ErrorDataResult<User>(Messages.PasswordError);
+            }
+
+            return new SuccessDataResult<User>(userToCheck, Messages.SuccessfullLogin);
+
         }
 
         public IResult Add(User user)

@@ -1,0 +1,50 @@
+﻿<Properties StartupConfiguration="{7F147F5C-CBCE-4D26-AB09-C1DDB0372C8C}|Default">
+  <MonoDevelop.Ide.ItemProperties.WebAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="DataAccess/Concrete/EntityFramework/Contexts/SupportManagementContext.cs">
+    <Files>
+      <File FileName="DataAccess/Concrete/EntityFramework/Contexts/SupportManagementContext.cs" Line="16" Column="138" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SupportManagement" expanded="True">
+            <Node name="Business" expanded="True">
+              <Node name="Concrete" expanded="True" />
+            </Node>
+            <Node name="Core" expanded="True">
+              <Node name="DataAccess" expanded="True">
+                <Node name="EntityFramework" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="DataAccess" expanded="True">
+              <Node name="Concrete" expanded="True">
+                <Node name="EntityFramework" expanded="True">
+                  <Node name="Contexts" expanded="True">
+                    <Node name="SupportManagementContext.cs" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="WebUI" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Users" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/hbo/Desktop/netProjects/SupportManagement/WebAPI/Controllers/AuthController.cs" relfile="WebAPI/Controllers/AuthController.cs" line="47" column="1" />
+      <Breakpoint file="/Users/hbo/Desktop/netProjects/SupportManagement/Business/Concrete/UserManager.cs" relfile="Business/Concrete/UserManager.cs" line="39" column="1" />
+      <Breakpoint file="/Users/hbo/Desktop/netProjects/SupportManagement/WebUI/Controllers/ErrorController.cs" relfile="WebUI/Controllers/ErrorController.cs" line="16" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.WebUI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>

@@ -1,5 +1,10 @@
 ﻿@model WebUI.Models.TicketsTicketsByLastWeekViewModel
 
+@{
+    ViewData["Title"] = "Son Bir Hafta Açılan Kayıtlar";
+}
+
+
 @foreach (var item in Model.TicketsByLastWeek)
 {
     @item.Id

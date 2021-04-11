@@ -6,6 +6,8 @@ using Business.Abstract;
 using Microsoft.AspNetCore.Mvc;
 using WebUI.Models;
 using Microsoft.AspNetCore.Http;
+using Core.Utilities.Hashing;
+using Entities.DTOs;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,10 +16,12 @@ namespace WebUI.Controllers
     public class UsersController : Controller
     {
         IUserService _userService;
+        IAuthService _authService;
 
-        public UsersController(IUserService userService)
+        public UsersController(IUserService userService, IAuthService authService)
         {
             _userService = userService;
+            _authService = authService;
         }
 
 
@@ -35,28 +39,17 @@ namespace WebUI.Controllers
         [HttpPost]
         public IActionResult Login(LoginViewModel model)
         {
-            var user = _userService.GetUserByEmailAndPassword(model.UserName, null);
 
-            if (user.Data != null)
+            var user = _authService.Login(new UserForLoginDto() { Email = model.UserName, Password = model.Password });
+
+            if (!user.Success)
             {
-                HttpContext.Session.SetString("UserName", user.Data.Email);
-                HttpContext.Session.SetString("Name", user.Data.Name);
-                HttpContext.Session.SetInt32("UserId", user.Data.Id);
-                HttpContext.Session.SetInt32("IsAdmin", user.Data.IsAdmin == true? 1 : 0);
-                return RedirectToAction("Index","Home");
+               
+                return RedirectToAction("Error", "Error", new { Message = user.Message, RequestId= "LoginRequest", ErrorCode= "LoginRequest" });
             }
-            else
-            {
-                return View("Error", new ErrorViewModel()
-                {
 
-                    RequestId = "0",
-                    Message = "Kullanıcı getirilirken hata oluştu."
+            return RedirectToAction("Index", "Home");
 
-                });
-            }
-            
         }
-
     }
 }

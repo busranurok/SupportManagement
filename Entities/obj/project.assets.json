@@ -7543,11 +7543,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/hbo/Projects/SupportManagement/Entities/Entities.csproj",
+      "projectUniqueName": "/Users/hbo/Desktop/netProjects/SupportManagement/Entities/Entities.csproj",
       "projectName": "Entities",
-      "projectPath": "/Users/hbo/Projects/SupportManagement/Entities/Entities.csproj",
+      "projectPath": "/Users/hbo/Desktop/netProjects/SupportManagement/Entities/Entities.csproj",
       "packagesPath": "/Users/hbo/.nuget/packages/",
-      "outputPath": "/Users/hbo/Projects/SupportManagement/Entities/obj/",
+      "outputPath": "/Users/hbo/Desktop/netProjects/SupportManagement/Entities/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/hbo/.config/NuGet/NuGet.Config"
@@ -7562,8 +7562,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "/Users/hbo/Projects/SupportManagement/Core/Core.csproj": {
-              "projectPath": "/Users/hbo/Projects/SupportManagement/Core/Core.csproj"
+            "/Users/hbo/Desktop/netProjects/SupportManagement/Core/Core.csproj": {
+              "projectPath": "/Users/hbo/Desktop/netProjects/SupportManagement/Core/Core.csproj"
             }
           }
         }

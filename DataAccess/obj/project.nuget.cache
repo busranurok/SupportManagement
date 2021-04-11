@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FzznVB9FV7HU15w7klmL/UHnJ8+WVHMSxlbKlJiFQa9qgAFbpunxtQ/Bw1XG6VL0z9OMRsR3r6njufAp7a6UBA==",
+  "dgSpecHash": "UTuYLsKwNfrTflJhR3oVEdoS7zWm3dpuKsDJMD3q8A/l+lc5FznRm5c1i7tdxhfTNFVcrYYn1GyotJZQVJzT1w==",
   "success": true,
-  "projectFilePath": "/Users/hbo/Projects/SupportManagement/DataAccess/DataAccess.csproj",
+  "projectFilePath": "/Users/hbo/Desktop/netProjects/SupportManagement/DataAccess/DataAccess.csproj",
   "expectedPackageFiles": [
     "/Users/hbo/.nuget/packages/autofac/6.1.0/autofac.6.1.0.nupkg.sha512",
     "/Users/hbo/.nuget/packages/autofac.extensions.dependencyinjection/7.1.0/autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",

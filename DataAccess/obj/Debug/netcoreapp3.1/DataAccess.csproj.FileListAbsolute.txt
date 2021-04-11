@@ -12,3 +12,17 @@
 /Users/hbo/Projects/SupportManagement/DataAccess/obj/Debug/netcoreapp3.1/DataAccess.csproj.CopyComplete
 /Users/hbo/Projects/SupportManagement/DataAccess/obj/Debug/netcoreapp3.1/DataAccess.dll
 /Users/hbo/Projects/SupportManagement/DataAccess/obj/Debug/netcoreapp3.1/DataAccess.pdb
+/Users/hbo/Desktop/netProjects/SupportManagement/DataAccess/bin/Debug/netcoreapp3.1/DataAccess.deps.json
+/Users/hbo/Desktop/netProjects/SupportManagement/DataAccess/bin/Debug/netcoreapp3.1/DataAccess.dll
+/Users/hbo/Desktop/netProjects/SupportManagement/DataAccess/bin/Debug/netcoreapp3.1/DataAccess.pdb
+/Users/hbo/Desktop/netProjects/SupportManagement/DataAccess/bin/Debug/netcoreapp3.1/Core.dll
+/Users/hbo/Desktop/netProjects/SupportManagement/DataAccess/bin/Debug/netcoreapp3.1/Entities.dll
+/Users/hbo/Desktop/netProjects/SupportManagement/DataAccess/bin/Debug/netcoreapp3.1/Entities.pdb
+/Users/hbo/Desktop/netProjects/SupportManagement/DataAccess/bin/Debug/netcoreapp3.1/Core.pdb
+/Users/hbo/Desktop/netProjects/SupportManagement/DataAccess/obj/Debug/netcoreapp3.1/DataAccess.csprojAssemblyReference.cache
+/Users/hbo/Desktop/netProjects/SupportManagement/DataAccess/obj/Debug/netcoreapp3.1/DataAccess.AssemblyInfoInputs.cache
+/Users/hbo/Desktop/netProjects/SupportManagement/DataAccess/obj/Debug/netcoreapp3.1/DataAccess.AssemblyInfo.cs
+/Users/hbo/Desktop/netProjects/SupportManagement/DataAccess/obj/Debug/netcoreapp3.1/DataAccess.csproj.CoreCompileInputs.cache
+/Users/hbo/Desktop/netProjects/SupportManagement/DataAccess/obj/Debug/netcoreapp3.1/DataAccess.csproj.CopyComplete
+/Users/hbo/Desktop/netProjects/SupportManagement/DataAccess/obj/Debug/netcoreapp3.1/DataAccess.dll
+/Users/hbo/Desktop/netProjects/SupportManagement/DataAccess/obj/Debug/netcoreapp3.1/DataAccess.pdb

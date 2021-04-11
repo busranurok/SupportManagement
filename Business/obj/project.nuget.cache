@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GpepGEYkx+BtF9Beb4snIl7HKuwbzgVbfLNMXytb4OSn1U71dLaLxA/h6ldHopRGx96bEumBhDghi8M7lOlrFQ==",
+  "dgSpecHash": "l3LIQLUuUQc0QwwbAGZ5Y0+UvvmwV+3WLX7S3yYENDCVNhmND/35GryVxUSEXfaiBjCaLIJurnDN+DT+H/NXsA==",
   "success": true,
-  "projectFilePath": "/Users/hbo/Projects/SupportManagement/Business/Business.csproj",
+  "projectFilePath": "/Users/hbo/Desktop/netProjects/SupportManagement/Business/Business.csproj",
   "expectedPackageFiles": [
     "/Users/hbo/.nuget/packages/autofac/6.1.0/autofac.6.1.0.nupkg.sha512",
     "/Users/hbo/.nuget/packages/autofac.extensions.dependencyinjection/7.1.0/autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",

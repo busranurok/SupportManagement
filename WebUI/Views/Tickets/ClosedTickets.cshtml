@@ -1,5 +1,10 @@
 ﻿@model WebUI.Models.TicketsClosedTicketsViewModel
 
+@{
+    ViewData["Title"] = "Kapalı Kayıtlar";
+}
+
+
 @foreach (var item in Model.ClosedTickets)
 {
     <p>@item.Id</p>

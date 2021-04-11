@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/hbo/Projects/SupportManagement/Core/Core.csproj": {}
+    "/Users/hbo/Desktop/netProjects/SupportManagement/Core/Core.csproj": {}
   },
   "projects": {
-    "/Users/hbo/Projects/SupportManagement/Core/Core.csproj": {
+    "/Users/hbo/Desktop/netProjects/SupportManagement/Core/Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/hbo/Projects/SupportManagement/Core/Core.csproj",
+        "projectUniqueName": "/Users/hbo/Desktop/netProjects/SupportManagement/Core/Core.csproj",
         "projectName": "Core",
-        "projectPath": "/Users/hbo/Projects/SupportManagement/Core/Core.csproj",
+        "projectPath": "/Users/hbo/Desktop/netProjects/SupportManagement/Core/Core.csproj",
         "packagesPath": "/Users/hbo/.nuget/packages/",
-        "outputPath": "/Users/hbo/Projects/SupportManagement/Core/obj/",
+        "outputPath": "/Users/hbo/Desktop/netProjects/SupportManagement/Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/hbo/.config/NuGet/NuGet.Config"

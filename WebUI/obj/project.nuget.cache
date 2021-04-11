@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+O7NS9/vLGoP3iffhqDGY1v20L+FmP3C0+O/FCGl/NCikJPDwqYZoxvP9BSq4lAw07yifZMNH8CtmrcSLaORjg==",
+  "dgSpecHash": "JzdiVf0SeftxI7/Xe1eS/GGyAjs6k89weMLzEYfdne9ehR+hWOaZpMpir6CD1aGf6aJnuMaEypYB+qKy0DKz/w==",
   "success": true,
-  "projectFilePath": "/Users/hbo/Projects/SupportManagement/WebUI/WebUI.csproj",
+  "projectFilePath": "/Users/hbo/Desktop/netProjects/SupportManagement/WebUI/WebUI.csproj",
   "expectedPackageFiles": [
     "/Users/hbo/.nuget/packages/autofac/6.1.0/autofac.6.1.0.nupkg.sha512",
     "/Users/hbo/.nuget/packages/autofac.extensions.dependencyinjection/7.1.0/autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",

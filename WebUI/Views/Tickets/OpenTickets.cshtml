@@ -1,4 +1,9 @@
 ﻿@model WebUI.Models.TicketsOpenTicketsViewModel
+
+@{
+    ViewData["Title"] = "Açık Kayıtlar";
+}
+
 <!--MainContent-->
 <section class="content" data-select2-id="25">
     <div class="container-fluid">
@@ -111,7 +116,7 @@
                         <thead>
                             <tr>
                                 <th style="width: 10%">
-                                    
+
                                 </th>
                                 <th style="width: 15%">
                                     Oluşturan Kullanıcı
@@ -237,12 +242,10 @@
 </section>
 
 
-<script>
-    $(document).ready(function () {
+<script>$(document).ready(function () {
         $('.assignedUser').select2();
         $('.customer').select2();
         $('.createdDate').select2();
-    });
-</script>
+    });</script>
 
 <!--/.content-->

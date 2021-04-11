@@ -10,7 +10,7 @@ namespace Business.Abstract
         IDataResult<User> GetById(int userId);
         IDataResult<List<User>> GetAllUsers();
         IDataResult<User> GetUserByEmail(string email);
-        IDataResult<User> GetUserByEmailAndPassword(string email, byte[] passwordHash);
+        IDataResult<User> GetUserByEmailAndPassword(string email, string password);
         IResult Add(User user);
         IResult Update(User user);
         IResult Delete(User user);
