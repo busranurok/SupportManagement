@@ -77,7 +77,7 @@ namespace WebAPI.Controllers
         }
 
 
-        [HttpGet("add")]
+        [HttpPost("add")]
         public IActionResult Add(User user)
         {
             var result = _userService.Add(user);

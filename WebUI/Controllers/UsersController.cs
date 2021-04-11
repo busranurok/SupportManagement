@@ -27,8 +27,30 @@ namespace WebUI.Controllers
 
         public IActionResult UserList()
         {
+            UsersUserListViewModel model = new UsersUserListViewModel();
+            model.Users = _userService.GetAllUsers().Data;
+            return View(model);
+        }
+
+
+        public IActionResult UserDetail()
+        {
             return View();
         }
+
+
+        public IActionResult UserEdit()
+        {
+            return View();
+        }
+
+
+        public IActionResult UserDelete()
+        {
+            return View();
+        }
+
+
 
         [HttpGet]
         public IActionResult Login()

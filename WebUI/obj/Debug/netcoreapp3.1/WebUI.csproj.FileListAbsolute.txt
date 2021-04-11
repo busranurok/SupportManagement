@@ -170,3 +170,9 @@
 /Users/hbo/Desktop/netProjects/SupportManagement/WebUI/obj/Debug/netcoreapp3.1/WebUI.dll
 /Users/hbo/Desktop/netProjects/SupportManagement/WebUI/obj/Debug/netcoreapp3.1/WebUI.pdb
 /Users/hbo/Desktop/netProjects/SupportManagement/WebUI/obj/Debug/netcoreapp3.1/WebUI.genruntimeconfig.cache
+/Users/hbo/Desktop/netProjects/SupportManagement/WebUI/obj/Debug/netcoreapp3.1/Razor/Views/Users/UserDelete.cshtml.g.cs
+/Users/hbo/Desktop/netProjects/SupportManagement/WebUI/obj/Debug/netcoreapp3.1/Razor/Views/Users/UserDetail.cshtml.g.cs
+/Users/hbo/Desktop/netProjects/SupportManagement/WebUI/obj/Debug/netcoreapp3.1/Razor/Views/Users/UserEdit.cshtml.g.cs
+/Users/hbo/Desktop/netProjects/SupportManagement/WebUI/obj/Debug/netcoreapp3.1/Razor/Views/Customers/CustomerDelete.cshtml.g.cs
+/Users/hbo/Desktop/netProjects/SupportManagement/WebUI/obj/Debug/netcoreapp3.1/Razor/Views/Customers/CustomerDetail.cshtml.g.cs
+/Users/hbo/Desktop/netProjects/SupportManagement/WebUI/obj/Debug/netcoreapp3.1/Razor/Views/Customers/CustomerEdit.cshtml.g.cs

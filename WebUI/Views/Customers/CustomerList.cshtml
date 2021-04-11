@@ -1,5 +1,7 @@
-﻿@{
-    ViewData["Title"] = "Kullanıcılar";
+﻿@model WebUI.Models.CustomersCustomerListViewModel
+
+@{
+    ViewData["Title"] = "Müşteriler";
 }
 
 <!--MainContent-->
@@ -42,7 +44,7 @@
                                     #
                                 </th>
                                 <th style="width: 15%">
-                                    Müşteri Adı
+                                    Ünvan
                                 </th>
                                 <th style="width: 8%">
                                     Oluşturma Tarihi
@@ -52,102 +54,29 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <img alt="Avatar" class="table-avatar" src="../../dist/img/avatar3.png">
-                                        </li>
-                                    </ul>
-                                </td>
-                                <td>
-                                    Hasan Basri OK
-                                </td>
-                                <td>
-                                    01.01.2019
-                                </td>
-                                <td class="project-actions text-right">
-                                    <a class="btn btn-primary btn-sm" href="#">
-                                        <i class="fas fa-folder">
-                                        </i>
-                                        Detay
-                                    </a>
-                                    <a class="btn btn-info btn-sm" href="#">
-                                        <i class="fas fa-pencil-alt">
-                                        </i>
-                                        Düzenle
-                                    </a>
-                                    <a class="btn btn-danger btn-sm" href="#">
-                                        <i class="fas fa-trash">
-                                        </i>
-                                        Sil
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <img alt="Avatar" class="table-avatar" src="../../dist/img/avatar.png">
-                                        </li>
-                                    </ul>
-                                </td>
-                                <td>
-                                    Büşra Nur OK
-                                </td>
-                                <td>
-                                    01.01.2019
-                                </td>
-                                <td class="project-actions text-right">
-                                    <a class="btn btn-primary btn-sm" href="#">
-                                        <i class="fas fa-folder">
-                                        </i>
-                                        Detay
-                                    </a>
-                                    <a class="btn btn-info btn-sm" href="#">
-                                        <i class="fas fa-pencil-alt">
-                                        </i>
-                                        Düzenle
-                                    </a>
-                                    <a class="btn btn-danger btn-sm" href="#">
-                                        <i class="fas fa-trash">
-                                        </i>
-                                        Sil
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <img alt="Avatar" class="table-avatar" src="../../dist/img/avatar.png">
-                                        </li>
-                                    </ul>
-                                </td>
-                                <td>
-                                    Duman Can OK
-                                </td>
-                                <td>
-                                    01.01.2019
-                                </td>
-                                <td class="project-actions text-right">
-                                    <a class="btn btn-primary btn-sm" href="#">
-                                        <i class="fas fa-folder">
-                                        </i>
-                                        Detay
-                                    </a>
-                                    <a class="btn btn-info btn-sm" href="#">
-                                        <i class="fas fa-pencil-alt">
-                                        </i>
-                                        Düzenle
-                                    </a>
-                                    <a class="btn btn-danger btn-sm" href="#">
-                                        <i class="fas fa-trash">
-                                        </i>
-                                        Sil
-                                    </a>
-                                </td>
-                            </tr>
+                            @foreach (var customer in Model.Customers)
+                            {
+                                <tr>
+                                    <td>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <img alt="Avatar" class="table-avatar" src="../../dist/img/avatar3.png">
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        @customer.Title
+                                    </td>
+                                    <td>
+                                        @customer.CreatedDate
+                                    </td>
+                                    <td class="project-actions text-right">
+                                        @Html.ActionLink("Detay", "CustomerDetail", "Customers", new { id = customer.Id }, new { @class = "btn btn-primary btn-sm" })
+                                        @Html.ActionLink("Düzenle", "CustomerEdit", "Customers", new { id = customer.Id }, new { @class = "btn btn-info btn-sm" })
+                                        @Html.ActionLink("Sil", "CustomerDelete", "Customers", new { id = customer.Id }, new { @class = "btn btn-danger btn-sm" })
+                                    </td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
                 </div>
