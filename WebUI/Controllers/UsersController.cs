@@ -33,6 +33,16 @@ namespace WebUI.Controllers
         }
 
 
+        [HttpGet]
+        public IActionResult UsersGetUserListForFilter()
+        {
+            var userList = _userService.GetAllUsers().Data;
+            var data = new UsersGetUserListForFilterModel();
+            data.Users = userList;
+
+            return Json(data);
+        }
+
         public IActionResult UserDetail()
         {
             return View();
@@ -63,6 +73,7 @@ namespace WebUI.Controllers
         {
 
             var user = _authService.Login(new UserForLoginDto() { Email = model.UserName, Password = model.Password });
+            HttpContext.Session.SetInt32("UserId", user.Data.Id);
 
             if (!user.Success)
             {

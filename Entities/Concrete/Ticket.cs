@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using Core.Entities;
+using Core.Entities.Concrete;
 
 namespace Entities.Concrete
 {
@@ -13,6 +15,8 @@ namespace Entities.Concrete
 
         public int Id { get; set; }
         public int CreatedUserId { get; set; }
+        [ForeignKey("CreatedUserId")]
+        public virtual User CreatedUser { get; set; }
         public int TicketTypeId { get; set; }
         public int TicketStatusId { get; set; }
         public int? OwnerId { get; set; }

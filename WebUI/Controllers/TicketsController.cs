@@ -85,7 +85,42 @@ namespace WebUI.Controllers
         public IActionResult GetAllTickets()
         {
             var ticketList = _ticketService.GetAllTickets();
-            return View(ticketList.Data);
+            var model = new TicketsGetAllTicketsViewModel();
+            model.Tickets = ticketList.Data;
+            return View(model);
         }
+
+
+        [HttpGet]
+        public IActionResult GetSummaryInformation()
+        {
+            var data = new LayoutTicketInformationModel();
+            data.AllTicketCount = 11;
+            data.MyTicketCount = 22;
+            data.OpenTicketCount = 66;
+
+            return Json(data);
+        }
+
+        [HttpPost]
+        public IActionResult FilterMyTickets(TicketsFilterMyTicketsModel model)
+        {
+            return Json("Hey");
+        }
+
+
+        [HttpPost]
+        public IActionResult FilterOpenTickets(TicketsFilterOpenTicketsModel model)
+        {
+            return Json("Hey");
+        }
+
+
+        [HttpPost]
+        public IActionResult FilterGetAllTickets(TicketsFilterGetAllTicketsModel model)
+        {
+            return Json("Hey");
+        }
+
     }
 }

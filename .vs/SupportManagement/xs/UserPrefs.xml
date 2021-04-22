@@ -1,12 +1,8 @@
-﻿<Properties StartupConfiguration="{C4684584-7287-4689-B81D-7256E63A2C4D}|Default">
+﻿<Properties StartupConfiguration="{7F147F5C-CBCE-4D26-AB09-C1DDB0372C8C}|Default">
   <MonoDevelop.Ide.ItemProperties.WebAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="DataAccess/Concrete/EntityFramework/Contexts/SupportManagementContext.cs">
     <Files>
-      <File FileName="WebAPI/Controllers/CustomersController.cs" Line="54" Column="1" />
-      <File FileName="Business/Concrete/CustomerManager.cs" Line="23" Column="49" />
-      <File FileName="Business/Concrete/UserManager.cs" Line="57" Column="10" />
-      <File FileName="Business/Concrete/AuthManager.cs" Line="60" Column="45" />
-      <File FileName="DataAccess/Concrete/EntityFramework/Contexts/SupportManagementContext.cs" Line="16" Column="43" />
+      <File FileName="DataAccess/Concrete/EntityFramework/Contexts/SupportManagementContext.cs" Line="16" Column="138" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -30,7 +26,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/hbo/Desktop/netProjects/SupportManagement/WebUI/Controllers/ErrorController.cs" relfile="WebUI/Controllers/ErrorController.cs" line="16" column="1" />
+      <Breakpoint file="/Users/hbo/Desktop/netProjects/SupportManagement/Core/Aspects/Autofac/Logging/LogAspect.cs" relfile="Core/Aspects/Autofac/Logging/LogAspect.cs" line="18" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

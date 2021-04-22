@@ -4,192 +4,320 @@
     ViewData["Title"] = "Üzerimdeki Kayıtlar";
 }
 
-<!--
-foreach (var item in Model.Tickets)
-{
-    <p>item.Id</p>
-    <br />
-    <p>item.Subject</p>
-    <br />
-    <p>item.Body</p>
-    <br />
-}
--->
 <!--MainContent-->
-<section class="content">
+<section class="content" data-select2-id="25">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="row card-header">
-                        <div class="col-3">
-                            <h3 class="card-title">Üzerimdeki Kayıtlar Listesi</h3>
-                        </div>
-                        <div class="col-7">
-
-                        </div>
-                        <div class="col-1">
-                            <div class="card-tools">
-                                <div class="input-group input-group-sm" style="width: 150px;">
-                                    <input type="text" name="table_search" class="form-control float-right" placeholder="Ara">
-                                    <div class="input-group-append">
-                                        <button type="submit" class="btn btn-default">
-                                            <i class="fas fa-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.card-header -->
-                    </div>
-                    <div class="row">
-                        <div class="col-3">
-                            <div class="form-group">
-                                <label for="exampleSelectRounded0">Oluşturulma Zamanı</label>
-                                <select class="custom-select rounded-0" id="exampleSelectRounded0">
-                                    <option>Seçiniz...</option>
-                                    <option>Bu hafta</option>
-                                    <option>Bu ay</option>
-                                    <option>Son 3 ay</option>
-                                    <option>Son 6 ay</option>
-                                    <option>Son 1 yıl</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="form-group">
-                                <label for="exampleSelectRounded0">Müşteri</label>
-                                <select class="custom-select rounded-0" id="exampleSelectRounded0">
-                                    <option>Seçiniz...</option>
-                                    <option>Hasan</option>
-                                    <option>Büşra</option>
-                                    <option>Basri</option>
-                                    <option>Duman</option>
-                                    <option>Tospik</option>
-                                    <option>Şakir</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="form-group">
-                                <label for="exampleSelectRounded0">Kayıt Durumu</label>
-                                <select class="custom-select rounded-0" id="exampleSelectRounded0">
-                                    <option>Seçiniz...</option>
-                                    <option>Kapandı</option>
-                                    <option>Açık</option>
-                                    <option>Beklemede</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="form-group">
-                                <label for="exampleSelectRounded0">Filtreleme</label>
-                                <br />
-                                <button type="submit" class="btn btn-default">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="card-body table-responsive p-0">
-                            <table class="table table-hover text-nowrap">
-                                <thead>
-                                    <tr>
-                                        <th>Ticket Başlığı</th>
-                                        <th>Oluşturan Kullanıcı</th>
-                                        <th>Oluşturma Tarihi</th>
-                                        <th>Detay</th>
-                                        <th>Düzenle</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Kargo</td>
-                                        <td>Hasan Basri OK</td>
-                                        <td>11-7-2014</td>
-                                        <td>
-                                            <button type="submit" class="btn btn-default">
-                                                <i class="fas fa-eye"></i>
-                                            </button>
-                                        </td>
-                                        <td>
-                                            <button type="submit" class="btn btn-default">
-                                                <i class="fas fa-edit"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Teknik Sorun</td>
-                                        <td>Büşra Nur OK</td>
-                                        <td>11-7-2014</td>
-                                        <td>
-                                            <button type="submit" class="btn btn-default">
-                                                <i class="fas fa-eye"></i>
-                                            </button>
-                                        </td>
-                                        <td>
-                                            <button type="submit" class="btn btn-default">
-                                                <i class="fas fa-edit"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Kırık Ürün</td>
-                                        <td>Duman OK</td>
-                                        <td>11-7-2014</td>
-                                        <td>
-                                            <button type="submit" class="btn btn-default">
-                                                <i class="fas fa-eye"></i>
-                                            </button>
-                                        </td>
-                                        <td>
-                                            <button type="submit" class="btn btn-default">
-                                                <i class="fas fa-edit"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sipariş Destek</td>
-                                        <td>Şakir OK</td>
-                                        <td>11-7-2014</td>
-                                        <td>
-                                            <button type="submit" class="btn btn-default">
-                                                <i class="fas fa-eye"></i>
-                                            </button>
-                                        </td>
-                                        <td>
-                                            <button type="submit" class="btn btn-default">
-                                                <i class="fas fa-edit"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Stok Bilgisi</td>
-                                        <td>Tospik OK</td>
-                                        <td>11-7-2014</td>
-                                        <td>
-                                            <button type="submit" class="btn btn-default">
-                                                <i class="fas fa-eye"></i>
-                                            </button>
-                                        </td>
-                                        <td>
-                                            <button type="submit" class="btn btn-default">
-                                                <i class="fas fa-edit"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- /.card-body -->
+        <form action="enhanced-results.html" data-select2-id="23">
+            <div class="form-group">
+                <div class="input-group input-group-lg">
+                    <input type="search" class="form-control form-control-lg" placeholder="Aranacak kelimeleri giriniz." value="Aranacak kelimeleri giriniz.">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-lg btn-default">
+                            <i class="fa fa-search"></i>
+                        </button>
                     </div>
                 </div>
-                <!-- /.card -->
             </div>
-            <!--/.col-12-->
+        </form>
+        <div class="card card-default">
+            <div class="card-header">
+                <h3 class="card-title">Filtreleme İşlemleri</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Oluşturulma Zamanı</label>
+                            <select id="createdDate" class="form-control" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                <option selected="selected" value="0">Seçiniz...</option>
+                                <option  value="thisWeek">Bu Hafta</option>
+                                <option  value="thisMonth">Bu Ay</option>
+                                <option  value="lastThreeMonths">Son 3 Ay</option>
+                                <option  value="lastSixMonths">Son 6 Ay</option>
+                                <option  value="lastYear">Son 1 Yıl</option>
+                            </select>
+                        </div>
+                        <!-- /.form-group -->
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Müşteri</label>
+                            <select id="customers" class="form-control" style="width: 100%;" data-select2-id="19" tabindex="-1" aria-hidden="true">
+                                <option selected="selected" value="0">Seçiniz...</option>
+                            </select>
+                        </div>
+                        <!-- /.form-group -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Üstlenen Kullanıcı</label>
+                            <select id="owners" class="form-control" style="width: 100%;" data-select2-id="19" tabindex="-1" aria-hidden="true">
+                                <option selected="selected" value="0">Seçiniz...</option>
+                            </select>
+                        </div>
+                        <!-- /.form-group -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <a id="filter" class="btn btn-primary btn-sm form-control" onclick="clickFilterButton()">
+                                <i class="fas fa-search">
+                                </i>
+                                Filtrele
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.card-body -->
         </div>
-        <!-- /.row -->
-    </div><!-- /.container-fluid -->
+        <div class="row mt-3">
+            <!-- Default box -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Açık Kayıtlar Listesi</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <a class="btn btn-primary btn-sm" href="#">
+                            <i class="fas fa-plus">
+                            </i>
+                            Ekle
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-striped projects">
+                        <thead>
+                            <tr>
+                                <th style="width: 10%">
+
+                                </th>
+                                <th style="width: 15%">
+                                    Oluşturan Kullanıcı
+                                </th>
+                                <th style="width: 15%">
+                                    Kayıt Başlığı
+                                </th>
+                                <th style="width: 8%">
+                                    Oluşturma Tarihi
+                                </th>
+                                <th style="width: 15%">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <img alt="Avatar" class="table-avatar" src="../../dist/img/avatar3.png">
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    Hasan Basri OK
+                                </td>
+                                <td>
+                                    Kargo Bilgisi
+                                </td>
+                                <td>
+                                    01.01.2019
+                                </td>
+                                <td class="project-actions text-right">
+                                    <a class="btn btn-primary btn-sm" href="#">
+                                        <i class="fas fa-folder">
+                                        </i>
+                                        Detay
+                                    </a>
+                                    <a class="btn btn-info btn-sm" href="#">
+                                        <i class="fas fa-pencil-alt">
+                                        </i>
+                                        Düzenle
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <img alt="Avatar" class="table-avatar" src="../../dist/img/avatar.png">
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    Büşra Nur OK
+                                </td>
+                                <td>
+                                    Stok Bilgisi
+                                </td>
+                                <td>
+                                    01.01.2019
+                                </td>
+                                <td class="project-actions text-right">
+                                    <a class="btn btn-primary btn-sm" href="#">
+                                        <i class="fas fa-folder">
+                                        </i>
+                                        Detay
+                                    </a>
+                                    <a class="btn btn-info btn-sm" href="#">
+                                        <i class="fas fa-pencil-alt">
+                                        </i>
+                                        Düzenle
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <img alt="Avatar" class="table-avatar" src="../../dist/img/avatar.png">
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    Duman Can OK
+                                </td>
+                                <td>
+                                    İade Bilgisi
+                                </td>
+                                <td>
+                                    01.01.2019
+                                </td>
+                                <td class="project-actions text-right">
+                                    <a class="btn btn-primary btn-sm" href="#">
+                                        <i class="fas fa-folder">
+                                        </i>
+                                        Detay
+                                    </a>
+                                    <a class="btn btn-info btn-sm" href="#">
+                                        <i class="fas fa-pencil-alt">
+                                        </i>
+                                        Düzenle
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer clearfix">
+                    <ul class="pagination pagination-sm m-0 float-right">
+                        <li class="page-item"><a class="page-link" href="#">«</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">»</a></li>
+                    </ul>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+    </div>
 </section>
+
+<script>
+    function fillCustomerList() {
+
+        $.ajax({
+            type: "GET",
+            url: "/Customers/CustomersGetCustomerListForFilter",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            cache: false,
+            success: function (data) {
+                if (data != null) {
+                    for (var i = 0; i <= data.customers.length; i++) {
+                        $("#customers").append('<option id="customers" value="' + data.customers[i].id + '">' + data.customers[i].title + '</option>');
+                    }
+                }
+            },
+            error: function (xhr) {
+                alert('error');
+            }
+        });
+    }
+
+    function fillUserList() {
+
+        $.ajax({
+            type: "GET",
+            url: "/Users/UsersGetUserListForFilter",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            cache: false,
+            success: function (data) {
+                if (data != null) {
+                    console.log(JSON.stringify(data));
+                    for (var i = 0; i <= data.users.length; i++) {
+                        $("#owners").append('<option id="owners" value="' + data.users[i].id.toString() + '">' + data.users[i].name + '</option>');
+                    }
+                }
+            },
+            error: function (xhr) {
+                alert('error');
+            }
+        });
+    }
+
+    function clickFilterButton() {
+
+        var created_Date = $("#createdDate").val();
+        var customer_id = $("#customers").val();
+        var owner_id = $('#owners').val();
+
+
+        var postData = {
+            CreatedDate: created_Date,
+            CustomerId: customer_id,
+            OwnerId: owner_id
+
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "/Tickets/FilterOpenTickets",
+                data: postData,
+                success: function (data) {
+                    if (data != null) {
+                        alert("başarılı");
+                        console.log(JSON.stringify(data));
+                    }
+                },
+                error: function (xhr) {
+                    alert('error');
+                }
+            });
+        
+        return false;
+
+    }
+
+    $(document).ready(function () {
+        /*$('.assignedUser').select2();
+        $('.customer').select2();
+        $('.createdDate').select2();*/
+
+        fillCustomerList();
+        fillUserList();
+        clickFilterButton();
+    });
+
+
+    </script>
+
+
+
 <!--/.content-->

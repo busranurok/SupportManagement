@@ -39,6 +39,11 @@
     <link rel="stylesheet" href="../../plugins/bs-stepper/css/bs-stepper.min.css">
     <!-- dropzonejs -->
     <link rel="stylesheet" href="../../plugins/dropzone/min/dropzone.min.css">
+
+    <!-- jQuery -->
+    <script src="~/plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="~/plugins/jquery-ui/jquery-ui.min.js"></script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
@@ -215,7 +220,7 @@
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Tüm Kayıtlar
-                                    <span class="badge badge-info right">6</span>
+                                    <span id="allTicketsCount" class="badge badge-info right">6</span>
                                 </p>
                             </a>
                         </li>
@@ -224,7 +229,7 @@
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Açık Kayıtlar
-                                    <span class="badge badge-info right">6</span>
+                                    <span id="openTicketsCount" class="badge badge-info right"></span>
                                 </p>
                             </a>
                         </li>
@@ -233,7 +238,7 @@
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Üzerimdeki Kayıtlar
-                                    <span class="badge badge-info right">6</span>
+                                    <span id="myTicketsCount" class="badge badge-info right">6</span>
                                 </p>
                             </a>
                         </li>
@@ -321,10 +326,7 @@
     </style>
 
     <!-- ./wrapper -->
-    <!-- jQuery -->
-    <script src="~/plugins/jquery/jquery.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="~/plugins/jquery-ui/jquery-ui.min.js"></script>
+  
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>$.widget.bridge('uibutton', $.ui.button)</script>
     <!-- Bootstrap 4 -->
@@ -367,6 +369,31 @@
     <script src="~/dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="~/dist/js/pages/dashboard.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "/Tickets/GetSummaryInformation",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                cache: false,
+                success: function (data) {
+                    if (data != null) {
+                        $("#allTicketsCount").html(data.allTicketCount);
+                        $("#openTicketsCount").html(data.openTicketCount);
+                        $("#myTicketsCount").html(data.myTicketCount);
+                    }
+                },
+                error: function (xhr) {
+                    alert('error');
+                }
+            });
+        }
+
+
+        );</script>
 
 </body>
 </html>

@@ -35,14 +35,13 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Oluşturulma Zamanı</label>
-                            <select class="form-control createdDate" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                            <select id="createdDate" class="form-control" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
                                 <option selected="selected" value="0">Seçiniz...</option>
-                                <option data-select2-id="61">Alaska</option>
-                                <option data-select2-id="62">California</option>
-                                <option data-select2-id="63">Delaware</option>
-                                <option data-select2-id="64">Tennessee</option>
-                                <option data-select2-id="65">Texas</option>
-                                <option data-select2-id="66">Washington</option>
+                                <option value="thisWeek">Bu Hafta</option>
+                                <option value="thisMonth">Bu Ay</option>
+                                <option value="lastThreeMonths">Son 3 Ay</option>
+                                <option value="lastSixMonths">Son 6 Ay</option>
+                                <option value="lastYear">Son 1 Yıl</option>
                             </select>
                         </div>
                         <!-- /.form-group -->
@@ -50,14 +49,8 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Müşteri</label>
-                            <select class="form-control customer" style="width: 100%;" data-select2-id="19" tabindex="-1" aria-hidden="true">
+                            <select id="customers" class="form-control" style="width: 100%;" data-select2-id="19" tabindex="-1" aria-hidden="true">
                                 <option selected="selected" value="0">Seçiniz...</option>
-                                <option data-select2-id="47">Hasan</option>
-                                <option data-select2-id="48">Büşra</option>
-                                <option data-select2-id="21">Duman</option>
-                                <option data-select2-id="49">Şakir</option>
-                                <option data-select2-id="50">Rıfkı</option>
-                                <option data-select2-id="51">Tospik</option>
                             </select>
                         </div>
                         <!-- /.form-group -->
@@ -66,14 +59,8 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Üstlenen Kullanıcı</label>
-                            <select class="form-control assignedUser" style="width: 100%;" data-select2-id="19" tabindex="-1" aria-hidden="true">
+                            <select id="owners" class="form-control" style="width: 100%;" data-select2-id="19" tabindex="-1" aria-hidden="true">
                                 <option selected="selected" value="0">Seçiniz...</option>
-                                <option value="47">Hasan</option>
-                                <option value="48">Büşra</option>
-                                <option value="21">Duman</option>
-                                <option value="49">Şakir</option>
-                                <option value="50">Rıfkı</option>
-                                <option value="51">Tospik</option>
                             </select>
                         </div>
                         <!-- /.form-group -->
@@ -82,7 +69,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>&nbsp;</label>
-                            <a class="btn btn-primary btn-sm form-control" href="#">
+                            <a class="btn btn-primary btn-sm form-control" onclick="clickFilterButton()">
                                 <i class="fas fa-search">
                                 </i>
                                 Filtrele
@@ -241,11 +228,88 @@
     </div>
 </section>
 
+<script>
+    function fillCustomerList() {
+
+        $.ajax({
+            type: "GET",
+            url: "/Customers/CustomersGetCustomerListForFilter",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            cache: false,
+            success: function (data) {
+                if (data != null) {
+                    for (var i = 0; i <= data.customers.length; i++) {
+                        $("#customers").append('<option id="customers" value="' + data.customers[i].id + '">' + data.customers[i].title + '</option>');
+                    }
+                }
+            },
+            error: function (xhr) {
+                alert('error');
+            }
+        });
+    }
+    function fillUserList() {
+
+        $.ajax({
+            type: "GET",
+            url: "/Users/UsersGetUserListForFilter",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            cache: false,
+            success: function (data) {
+                if (data != null) {
+                    console.log(JSON.stringify(data));
+                    for (var i = 0; i <= data.users.length; i++) {
+                        $("#owners").append('<option id="owners" value="' + data.users[i].id.toString() + '">' + data.users[i].name + '</option>');
+                    }
+                }
+            },
+            error: function (xhr) {
+                alert('error');
+            }
+        });
+    }
+
+    function clickFilterButton() {
+
+        var created_Date = $("#createdDate").val();
+        var customer_id = $("#customers").val();
+        var owner_id = $('#owners').val();
+
+
+        var postData = {
+            CreatedDate: created_Date,
+            CustomerId: customer_id,
+            OwnerId: owner_id
+
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "/Tickets/FilterOpenTickets",
+            data: postData,
+            success: function (data) {
+                if (data != null) {
+                    alert("başarılı");
+                    console.log(JSON.stringify(data));
+                }
+            },
+            error: function (xhr) {
+                alert('error');
+            }
+        });
+
+        return false;
+
+    }
+</script>
 
 <script>$(document).ready(function () {
-        $('.assignedUser').select2();
-        $('.customer').select2();
-        $('.createdDate').select2();
-    });</script>
+    fillCustomerList();
+    fillUserList();
+    clickFilterButton()
+});
+    </script>
 
 <!--/.content-->

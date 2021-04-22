@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Business.Abstract;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using WebAPI.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -62,8 +63,18 @@ namespace WebAPI.Controllers
 
 
         [HttpPost("add")]
-        public IActionResult Add(Ticket ticket)
+        public IActionResult Add(AddTicketRequestModel ticketModel)
         {
+            var ticket = new Ticket();
+            ticket.Body = ticketModel.Body;
+            ticket.CompletedDate = null;
+            ticket.CreatedDate = DateTime.Now;
+            ticket.CreatedUserId = ticketModel.CreatedUserId;
+            ticket.OwnerId = null;
+            ticket.Subject = ticketModel.Subject;
+            ticket.TicketStatusId = 1;
+            ticket.TicketTypeId = ticketModel.TicketTypeId;
+
             var result = _ticketService.Add(ticket);
 
             if (result.Success)
@@ -77,8 +88,18 @@ namespace WebAPI.Controllers
 
 
         [HttpPost("update")]
-        public IActionResult Update(Ticket ticket)
+        public IActionResult Update(UpdateTicketRequestModel ticketModel)
         {
+            var ticket = new Ticket();
+            ticket.Body = ticketModel.Body;
+            ticket.CompletedDate = null;
+            ticket.CreatedDate = DateTime.Now;
+            ticket.CreatedUserId = ticketModel.CreatedUserId;
+            ticket.OwnerId = null;
+            ticket.Subject = ticketModel.Subject;
+            ticket.TicketStatusId = 1;
+            ticket.TicketTypeId = ticketModel.TicketTypeId;
+
             var result = _ticketService.Update(ticket);
 
             if (result.Success)
@@ -91,8 +112,18 @@ namespace WebAPI.Controllers
 
 
         [HttpPost("delete")]
-        public IActionResult Delete(Ticket ticket)
+        public IActionResult Delete(DeleteTicketRequestModel ticketModel)
         {
+            var ticket = new Ticket();
+            ticket.Body = ticketModel.Body;
+            ticket.CompletedDate = null;
+            ticket.CreatedDate = DateTime.Now;
+            ticket.CreatedUserId = ticketModel.CreatedUserId;
+            ticket.OwnerId = null;
+            ticket.Subject = ticketModel.Subject;
+            ticket.TicketStatusId = 1;
+            ticket.TicketTypeId = ticketModel.TicketTypeId;
+
             var result = _ticketService.Delete(ticket);
 
             if (result.Success)

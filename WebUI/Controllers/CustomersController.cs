@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -26,6 +26,17 @@ namespace WebUI.Controllers
             CustomersCustomerListViewModel model = new CustomersCustomerListViewModel();
             model.Customers = _customerService.GetAllCustomers().Data;
             return View(model);
+        }
+
+
+        [HttpGet]
+        public IActionResult CustomersGetCustomerListForFilter()
+        {
+            var customerList = _customerService.GetAllCustomers().Data;
+            var data = new CustomersGetCustomerListForFilterModel();
+            data.Customers = customerList;
+
+            return Json(data);
         }
 
 

@@ -7,6 +7,7 @@ namespace Business.CCS.Concrete
     {
         public FileLogger()
         {
+            
         }
 
         public void Log()

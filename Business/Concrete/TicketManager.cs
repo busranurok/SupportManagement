@@ -32,7 +32,7 @@ namespace Business.Concrete
         public IDataResult<List<Ticket>> GetAllTickets()
         {
             //Thread.Sleep(millisecondsTimeout: 5000);
-            return new SuccessDataResult<List<Ticket>>(_ticketDal.GetAll(filter : null));
+            return new SuccessDataResult<List<Ticket>>(_ticketDal.GetAllTicketsWithIncludes());
         }
 
         public IDataResult<Ticket> GetById(int ticketId)
@@ -51,7 +51,7 @@ namespace Business.Concrete
         }
 
         [CacheAspect(duration:10)]
-        [LogAspect(typeof(FileLogger))]
+        //[LogAspect(typeof(FileLogger))]
         public IDataResult<List<Ticket>> GetTicketsByCreatedUserId(int createdUserId)
         {
             return new SuccessDataResult<List<Ticket>>(_ticketDal.GetAll(filter: t=> t.CreatedUserId == createdUserId));
@@ -95,5 +95,6 @@ namespace Business.Concrete
             return new SuccessResult(Messages.TicketUpdated);
 
        }
+
     }
 }
