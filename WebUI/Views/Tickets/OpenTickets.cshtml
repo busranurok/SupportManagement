@@ -118,97 +118,40 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <img alt="Avatar" class="table-avatar" src="../../dist/img/avatar3.png">
-                                        </li>
-                                    </ul>
-                                </td>
-                                <td>
-                                    Hasan Basri OK
-                                </td>
-                                <td>
-                                    Kargo Bilgisi
-                                </td>
-                                <td>
-                                    01.01.2019
-                                </td>
-                                <td class="project-actions text-right">
-                                    <a class="btn btn-primary btn-sm" href="#">
-                                        <i class="fas fa-folder">
-                                        </i>
-                                        Detay
-                                    </a>
-                                    <a class="btn btn-info btn-sm" href="#">
-                                        <i class="fas fa-pencil-alt">
-                                        </i>
-                                        Düzenle
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <img alt="Avatar" class="table-avatar" src="../../dist/img/avatar.png">
-                                        </li>
-                                    </ul>
-                                </td>
-                                <td>
-                                    Büşra Nur OK
-                                </td>
-                                <td>
-                                    Stok Bilgisi
-                                </td>
-                                <td>
-                                    01.01.2019
-                                </td>
-                                <td class="project-actions text-right">
-                                    <a class="btn btn-primary btn-sm" href="#">
-                                        <i class="fas fa-folder">
-                                        </i>
-                                        Detay
-                                    </a>
-                                    <a class="btn btn-info btn-sm" href="#">
-                                        <i class="fas fa-pencil-alt">
-                                        </i>
-                                        Düzenle
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <img alt="Avatar" class="table-avatar" src="../../dist/img/avatar.png">
-                                        </li>
-                                    </ul>
-                                </td>
-                                <td>
-                                    Duman Can OK
-                                </td>
-                                <td>
-                                    İade Bilgisi
-                                </td>
-                                <td>
-                                    01.01.2019
-                                </td>
-                                <td class="project-actions text-right">
-                                    <a class="btn btn-primary btn-sm" href="#">
-                                        <i class="fas fa-folder">
-                                        </i>
-                                        Detay
-                                    </a>
-                                    <a class="btn btn-info btn-sm" href="#">
-                                        <i class="fas fa-pencil-alt">
-                                        </i>
-                                        Düzenle
-                                    </a>
-                                </td>
-                            </tr>
+                        <tbody id="tableBody">
+                            @foreach (var item in Model.OpenTickets)
+                            {
+                                <tr>
+                                    <td>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <img alt="Avatar" class="table-avatar" src="../../dist/img/avatar3.png">
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        @item.CreatedUser.Name
+                                    </td>
+                                    <td>
+                                        @item.Subject
+                                    </td>
+                                    <td>
+                                        @item.CreatedDate
+                                    </td>
+                                    <td class="project-actions text-right">
+                                        <a class="btn btn-primary btn-sm" href=@item.Id>
+                                            <i class="fas fa-folder">
+                                            </i>
+                                            Detay
+                                        </a>
+                                        <a class="btn btn-info btn-sm" href=@item.Id>
+                                            <i class="fas fa-pencil-alt">
+                                            </i>
+                                            Düzenle
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -291,8 +234,45 @@
             data: postData,
             success: function (data) {
                 if (data != null) {
-                    alert("başarılı");
                     console.log(JSON.stringify(data));
+                    $('#tableBody').html('');
+                    for (var i = 0; i < data.length; i++) {
+
+                        var content = ` <tr>
+                            <td>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <img alt="Avatar" class="table-avatar" src="../../dist/img/avatar3.png">
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    ${data[i].createdUser.name} ${data[i].createdUser.lastName} 
+                                </td>
+                                <td>
+                                    ${data[i].subject}
+                                </td>
+                                <td>
+                                    ${data[i].createdDate}
+                                </td>
+                                <td class="project-actions text-right">
+                                    <a class="btn btn-primary btn-sm" href="#">
+                                        <i class="fas fa-folder">
+                                        </i>
+                                        Detay
+                                    </a>
+                                    <a class="btn btn-info btn-sm" href="#">
+                                        <i class="fas fa-pencil-alt">
+                                        </i>
+                                        Düzenle
+                                    </a>
+                                </td>
+                            </tr>
+`;
+
+
+                        $('#tableBody').append(content);
+                    }
                 }
             },
             error: function (xhr) {
@@ -308,7 +288,6 @@
 <script>$(document).ready(function () {
     fillCustomerList();
     fillUserList();
-    clickFilterButton()
 });
     </script>
 

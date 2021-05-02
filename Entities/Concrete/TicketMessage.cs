@@ -14,5 +14,6 @@ namespace Entities.Concrete
         public int CreatedUserId { get; set; }
         public int TicketStatusId  { get; set; }
         public string Body { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 }

@@ -1,0 +1,118 @@
+﻿@model WebUI.Models.TicketsTicketDetailViewModel
+<link rel="stylesheet" href="~/css/ticketDetail.css">
+<script src="~/js/ticketDetail.js"></script>
+
+@{
+    ViewData["Title"] = "Kayıt Detayı";
+}
+
+
+<div class="main_section">
+    <div class="container">
+        <div class="card card-default">
+            <div class="card-header">
+                <h3 class="card-title">@Model.Ticket.Subject</h3>
+                <br />
+                <h3 class="card-title">@Model.Ticket.Body</h3>
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Oluşturulma Zamanı</label>
+                            <br />
+                            <label>@Model.Ticket.CreatedDate</label>
+                        </div>
+                        <!-- /.form-group -->
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Oluşturan Kullanıcı</label>
+                            <br />
+                            <label>@Model.Ticket.CreatedUser.Name @Model.Ticket.CreatedUser.LastName</label>
+                        </div>
+                        <!-- /.form-group -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Üstlenen Kullanıcı</label>
+                            <br />
+                           <label>@Model.Ticket.Owner.Name @Model.Ticket.Owner.LastName</label>
+                        </div>
+                        <!-- /.form-group -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Kayıt Durumu</label>
+                            <br />
+                            <label>@Model.Ticket.TicketStatus.Name</label>
+                        </div>
+                        <!-- /.form-group -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <div class="chat_container">
+            <div class="col-sm-12 message_section">
+                <div class="row">
+                    <div class="new_message_head ">
+                    </div><!--new_message_head-->
+
+                    <div class="chat_area">
+                        <ul class="list-unstyled">
+                            <li class="left clearfix">
+                                <span class="chat-img1 float-left">
+                                    <img src="https://g.hizliresim.com/lila-orkide" alt="User Avatar" class="img-circle">
+                                </span>
+                                <div class="chat-body1 clearfix">
+                                    @foreach (var item in Model.TicketMessages)
+                                    {
+                                        <p>
+                                            @item.Body
+                                        </p>
+
+                                        <div class="chat_time float-right"> @item.CreatedDate</div>
+                                    }
+
+                                </div>
+                            </li>
+                            @*<li class="left clearfix admin_chat">
+                                <span class="chat-img1 float-right">
+                                    <img src="https://g.hizliresim.com/lila-orkide" alt="User Avatar" class="img-circle">
+                                </span>
+                                <div class="chat-body1 clearfix">
+                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.</p>
+                                    <div class="chat_time float-left">09:40PM</div>
+                                </div>
+                            </li>*@
+                        </ul>
+                    </div><!--chat_area-->
+                    <div class="message_write">
+                        <textarea class="form-control" placeholder="Bir mesaj yaz."></textarea>
+                        <div class="clearfix"></div>
+                        <div class="chat_bottom">
+                            <a href="#" class="float-left upload_btn">
+                                <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                Dosya Ekle
+                            </a>
+                            <a href="#" class="float-right btn btn-success">
+                                Gönder
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div> <!--message_section-->
+        </div>
+    </div>
+</div>

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using WebUI.Models;
 using Entities.Concrete;
+using System.Linq.Expressions;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -27,7 +28,7 @@ namespace WebUI.Controllers
             var userId = HttpContext.Session.GetInt32("UserId");
             var tickets = _ticketService.GetTicketsByCreatedUserId(userId.Value);
             var model = new TicketsMyTicketsViewModel();
-            model.Tickets = tickets.Data;
+            model.MyTickets = tickets.Data;
             return View(model);
         }
 
@@ -105,21 +106,140 @@ namespace WebUI.Controllers
         [HttpPost]
         public IActionResult FilterMyTickets(TicketsFilterMyTicketsModel model)
         {
-            return Json("Hey");
+            List<Expression<Func<Ticket, bool>>> filterList = new List<Expression<Func<Ticket, bool>>>();
+
+            if (model.CustomerId!=0)
+            {
+                filterList.Add(x => x.CustomerId == model.CustomerId);
+            }
+
+            if (model.OwnerId!=0)
+            {
+                filterList.Add(x => x.OwnerId == model.OwnerId);
+            }
+
+            switch (model.CreatedDate)
+            {
+                case "thisWeek":
+                    filterList.Add(x => x.CreatedDate > DateTime.Now.AddDays(-7));
+                    break;
+                case "thisMonth":
+                    filterList.Add(x => x.CreatedDate > DateTime.Now.AddMonths(-1));
+                    break;
+                case "lastThreeMonths":
+                    filterList.Add(x => x.CreatedDate > DateTime.Now.AddMonths(-3));
+                    break;
+                case "lastSixMonths":
+                    filterList.Add(x => x.CreatedDate > DateTime.Now.AddMonths(-6));
+                    break;
+                case "lastYear":
+                    filterList.Add(x => x.CreatedDate > DateTime.Now.AddYears(-1));
+                    break;
+                default:
+                    break;
+            }
+
+            var ticketList= _ticketService.GetTicketByFilters(filterList);
+            return Json(ticketList.Data);
         }
 
 
         [HttpPost]
         public IActionResult FilterOpenTickets(TicketsFilterOpenTicketsModel model)
         {
-            return Json("Hey");
+            List<Expression<Func<Ticket, bool>>> filterList = new List<Expression<Func<Ticket, bool>>>();
+
+            if (model.CustomerId != 0)
+            {
+                filterList.Add(x => x.CustomerId == model.CustomerId);
+            }
+
+            if (model.OwnerId != 0)
+            {
+                filterList.Add(x => x.OwnerId == model.OwnerId);
+            }
+
+            switch (model.CreatedDate)
+            {
+                case "thisWeek":
+                    filterList.Add(x => x.CreatedDate > DateTime.Now.AddDays(-7));
+                    break;
+                case "thisMonth":
+                    filterList.Add(x => x.CreatedDate > DateTime.Now.AddMonths(-1));
+                    break;
+                case "lastThreeMonths":
+                    filterList.Add(x => x.CreatedDate > DateTime.Now.AddMonths(-3));
+                    break;
+                case "lastSixMonths":
+                    filterList.Add(x => x.CreatedDate > DateTime.Now.AddMonths(-6));
+                    break;
+                case "lastYear":
+                    filterList.Add(x => x.CreatedDate > DateTime.Now.AddYears(-1));
+                    break;
+                default:
+                    break;
+            }
+
+            var ticketList = _ticketService.GetTicketByFilters(filterList);
+            return Json(ticketList.Data);
         }
 
 
         [HttpPost]
         public IActionResult FilterGetAllTickets(TicketsFilterGetAllTicketsModel model)
         {
-            return Json("Hey");
+            List<Expression<Func<Ticket, bool>>> filterList = new List<Expression<Func<Ticket, bool>>>();
+
+            if (model.CustomerId != 0)
+            {
+                filterList.Add(x => x.CustomerId == model.CustomerId);
+            }
+
+            if (model.OwnerId != 0)
+            {
+                filterList.Add(x => x.OwnerId == model.OwnerId);
+            }
+
+            if (model.TicketStatusId != 0)
+            {
+                filterList.Add(x => x.TicketStatusId == model.TicketStatusId);
+            }
+
+            switch (model.CreatedDate)
+            {
+                case "thisWeek":
+                    filterList.Add(x => x.CreatedDate > DateTime.Now.AddDays(-7));
+                    break;
+                case "thisMonth":
+                    filterList.Add(x => x.CreatedDate > DateTime.Now.AddMonths(-1));
+                    break;
+                case "lastThreeMonths":
+                    filterList.Add(x => x.CreatedDate > DateTime.Now.AddMonths(-3));
+                    break;
+                case "lastSixMonths":
+                    filterList.Add(x => x.CreatedDate > DateTime.Now.AddMonths(-6));
+                    break;
+                case "lastYear":
+                    filterList.Add(x => x.CreatedDate > DateTime.Now.AddYears(-1));
+                    break;
+                default:
+                    break;
+            }
+
+            var ticketList = _ticketService.GetTicketByFilters(filterList);
+            return Json(ticketList.Data);
+        }
+
+
+        public IActionResult TicketDetail(int ticketId)
+        {
+            var ticket = _ticketService.GetTicketWithInclude(t => t.Id == ticketId);
+            var model = new TicketsTicketDetailViewModel();
+            model.Ticket = ticket.Data;
+
+            var ticketMessageList = _ticketService.GetMessagesForTicketDetail(ticketId);
+            model.TicketMessages = ticketMessageList.Data;
+            return View(model);
         }
 
     }

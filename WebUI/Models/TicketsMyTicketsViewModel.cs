@@ -10,6 +10,6 @@ namespace WebUI.Models
         {
         }
 
-        public List<Ticket> Tickets { get; set; }
+        public List<Ticket> MyTickets { get; set; }
     }
 }

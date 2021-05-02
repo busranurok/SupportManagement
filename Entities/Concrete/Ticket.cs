@@ -19,10 +19,15 @@ namespace Entities.Concrete
         public virtual User CreatedUser { get; set; }
         public int TicketTypeId { get; set; }
         public int TicketStatusId { get; set; }
+        [ForeignKey("TicketStatusId")]
+        public virtual TicketStatus TicketStatus{ get; set; }
         public int? OwnerId { get; set; }
+        [ForeignKey("OwnerId")]
+        public virtual User Owner { get; set; }
         public string Subject { get; set; }
         public string Body { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime? CompletedDate { get; set; }
+        public int CustomerId { get; set; }
     }
 }

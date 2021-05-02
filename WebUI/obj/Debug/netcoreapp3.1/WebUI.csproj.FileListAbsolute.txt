@@ -176,3 +176,4 @@
 /Users/hbo/Desktop/netProjects/SupportManagement/WebUI/obj/Debug/netcoreapp3.1/Razor/Views/Customers/CustomerDelete.cshtml.g.cs
 /Users/hbo/Desktop/netProjects/SupportManagement/WebUI/obj/Debug/netcoreapp3.1/Razor/Views/Customers/CustomerDetail.cshtml.g.cs
 /Users/hbo/Desktop/netProjects/SupportManagement/WebUI/obj/Debug/netcoreapp3.1/Razor/Views/Customers/CustomerEdit.cshtml.g.cs
+/Users/hbo/Desktop/netProjects/SupportManagement/WebUI/obj/Debug/netcoreapp3.1/Razor/Views/Tickets/TicketDetail.cshtml.g.cs

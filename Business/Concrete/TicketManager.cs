@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Threading;
 using Business.Abstract;
 using Business.CCS.Concrete;
@@ -10,6 +11,7 @@ using Core.Aspects.Autofac.Logging;
 using Core.Aspects.Autofac.Performance;
 using Core.Aspects.Autofac.Transaction;
 using Core.Aspects.Autofac.Validation;
+using Core.Entities;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using DataAccess.Abstract;
@@ -42,24 +44,30 @@ namespace Business.Concrete
 
         public IDataResult<List<Ticket>> GetClosedTickets(int ticketStatusId = 3)
         {
-            return new SuccessDataResult<List<Ticket>>(_ticketDal.GetAll(filter: t=> t.TicketStatusId == ticketStatusId));
+            return new SuccessDataResult<List<Ticket>>(_ticketDal.GetAllTicketsWithIncludes(filter: t=> t.TicketStatusId == ticketStatusId));
         }
 
         public IDataResult<List<Ticket>> GetOpenTickets(int ticketStatusId = 1)
         {
-            return new SuccessDataResult<List<Ticket>>(_ticketDal.GetAll(filter: t=> t.TicketStatusId == ticketStatusId));
+            return new SuccessDataResult<List<Ticket>>(_ticketDal.GetAllTicketsWithIncludes(filter: t=> t.TicketStatusId == ticketStatusId));
         }
 
         [CacheAspect(duration:10)]
         //[LogAspect(typeof(FileLogger))]
         public IDataResult<List<Ticket>> GetTicketsByCreatedUserId(int createdUserId)
         {
-            return new SuccessDataResult<List<Ticket>>(_ticketDal.GetAll(filter: t=> t.CreatedUserId == createdUserId));
+            return new SuccessDataResult<List<Ticket>>(_ticketDal.GetAllTicketsWithIncludes(filter: t=> t.CreatedUserId == createdUserId));
         }
 
         public IDataResult<List<Ticket>> GetTicketsByLastWeek()
         {
             return new SuccessDataResult<List<Ticket>>(_ticketDal.GetAll(filter: t => t.CreatedDate > DateTime.Now.AddDays(-7)));
+        }
+
+        public IDataResult<List<Ticket>> GetTicketByFilters(List<Expression<Func<Ticket, bool>>> filterList)
+        {
+            return new SuccessDataResult<List<Ticket>>(_ticketDal.GetTicketListByFilters(filterList));
+                
         }
 
         [ValidationAspect(typeof(TicketValidator), Priority = 1)]
@@ -96,5 +104,14 @@ namespace Business.Concrete
 
        }
 
+        public IDataResult<Ticket> GetTicketWithInclude(Expression<Func<Ticket, bool>> filter = null)
+        {
+            return new SuccessDataResult<Ticket>(_ticketDal.GetTicketWithInclude(filter));
+        }
+
+        public IDataResult<List<TicketMessage>> GetMessagesForTicketDetail(int ticketId)
+        {
+            return new SuccessDataResult<List<TicketMessage>>(_ticketDal.GetMessagesForTicketDetail(ticketId));
+        }
     }
 }
