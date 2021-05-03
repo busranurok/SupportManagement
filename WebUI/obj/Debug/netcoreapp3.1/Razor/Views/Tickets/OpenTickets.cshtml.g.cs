@@ -39,8 +39,15 @@ using Entities.Concrete;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "/Users/hbo/Desktop/netProjects/SupportManagement/WebUI/Views/_ViewImports.cshtml"
+using Microsoft.AspNetCore.Http;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f2ad7042b57aa47af38a6344c20e929e668e81c8", @"/Views/Tickets/OpenTickets.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ff4f0e801946e5c34baf0e0facf37922724ab8a2", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"493d55409fdd4b52daacfb95d8befa8b443a52d7", @"/Views/_ViewImports.cshtml")]
     public class Views_Tickets_OpenTickets : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<WebUI.Models.TicketsOpenTicketsViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("action", new global::Microsoft.AspNetCore.Html.HtmlString("enhanced-results.html"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -88,7 +95,7 @@ using Entities.Concrete;
 #line hidden
 #nullable disable
             WriteLiteral("\n<!--MainContent-->\n<section class=\"content\" data-select2-id=\"25\">\n    <div class=\"container-fluid\">\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2ad7042b57aa47af38a6344c20e929e668e81c86889", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2ad7042b57aa47af38a6344c20e929e668e81c87077", async() => {
                 WriteLiteral(@"
             <div class=""form-group"">
                 <div class=""input-group input-group-lg"">
@@ -135,7 +142,7 @@ using Entities.Concrete;
                             <label>Oluşturulma Zamanı</label>
                             <select id=""createdDate"" class=""form-control"" style=""width: 100%;"" data-select2-id=""1"" tabindex=""-1"" aria-hidden=""true"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2ad7042b57aa47af38a6344c20e929e668e81c89714", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2ad7042b57aa47af38a6344c20e929e668e81c89902", async() => {
                 WriteLiteral("Seçiniz...");
             }
             );
@@ -152,7 +159,7 @@ using Entities.Concrete;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2ad7042b57aa47af38a6344c20e929e668e81c810973", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2ad7042b57aa47af38a6344c20e929e668e81c811161", async() => {
                 WriteLiteral("Bu Hafta");
             }
             );
@@ -168,7 +175,7 @@ using Entities.Concrete;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2ad7042b57aa47af38a6344c20e929e668e81c812149", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2ad7042b57aa47af38a6344c20e929e668e81c812337", async() => {
                 WriteLiteral("Bu Ay");
             }
             );
@@ -184,7 +191,7 @@ using Entities.Concrete;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2ad7042b57aa47af38a6344c20e929e668e81c813322", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2ad7042b57aa47af38a6344c20e929e668e81c813510", async() => {
                 WriteLiteral("Son 3 Ay");
             }
             );
@@ -200,7 +207,7 @@ using Entities.Concrete;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2ad7042b57aa47af38a6344c20e929e668e81c814498", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2ad7042b57aa47af38a6344c20e929e668e81c814686", async() => {
                 WriteLiteral("Son 6 Ay");
             }
             );
@@ -216,7 +223,7 @@ using Entities.Concrete;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2ad7042b57aa47af38a6344c20e929e668e81c815674", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2ad7042b57aa47af38a6344c20e929e668e81c815862", async() => {
                 WriteLiteral("Son 1 Yıl");
             }
             );
@@ -241,7 +248,7 @@ using Entities.Concrete;
                             <label>Müşteri</label>
                             <select id=""customers"" class=""form-control"" style=""width: 100%;"" data-select2-id=""19"" tabindex=""-1"" aria-hidden=""true"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2ad7042b57aa47af38a6344c20e929e668e81c817300", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2ad7042b57aa47af38a6344c20e929e668e81c817488", async() => {
                 WriteLiteral("Seçiniz...");
             }
             );
@@ -268,7 +275,7 @@ using Entities.Concrete;
                             <label>Üstlenen Kullanıcı</label>
                             <select id=""owners"" class=""form-control"" style=""width: 100%;"" data-select2-id=""19"" tabindex=""-1"" aria-hidden=""true"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2ad7042b57aa47af38a6344c20e929e668e81c819052", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2ad7042b57aa47af38a6344c20e929e668e81c819240", async() => {
                 WriteLiteral("Seçiniz...");
             }
             );

@@ -1,6 +1,11 @@
 ﻿<Properties StartupConfiguration="{7F147F5C-CBCE-4D26-AB09-C1DDB0372C8C}|Default">
   <MonoDevelop.Ide.ItemProperties.WebAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="DataAccess/Concrete/EntityFramework/Contexts/SupportManagementContext.cs">
+    <Files>
+      <File FileName="WebUI/Views/Tickets/GetAllTickets.cshtml" Line="152" Column="103" />
+      <File FileName="WebUI/Controllers/TicketsController.cs" Line="87" Column="1" />
+      <File FileName="DataAccess/Concrete/EntityFramework/Contexts/SupportManagementContext.cs" Line="16" Column="13" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
