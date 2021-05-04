@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using WebUI.Models;
 using Entities.Concrete;
 using System.Linq.Expressions;
+using System.IO;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -240,6 +241,31 @@ namespace WebUI.Controllers
             var ticketMessageList = _ticketService.GetMessagesForTicketDetail(ticketId);
             model.TicketMessages = ticketMessageList.Data;
             return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Send(TicketsTicketDetailViewModel model)
+        {
+            if (model.Files == null || model.Files.Count == 0)
+                return Content("Dosya(lar) seçilmedi.");
+
+            foreach (var formFile in model.Files)
+            {
+                if (formFile.Length > 0)
+                {
+                    // full path to file in temp location
+                    var fileNameWithPath = "/Users/hbo/Desktop/netProjects/SupportManagement/WebUI/bin/Debug/netcoreapp3.1/wwwroot/images/"+formFile.FileName;
+
+                    using (var stream = new FileStream(fileNameWithPath, FileMode.Create))
+                    {
+                        formFile.CopyTo(stream);
+                    }
+                }
+
+            }
+
+
+            return RedirectToAction("GetAllTickets");
         }
 
     }

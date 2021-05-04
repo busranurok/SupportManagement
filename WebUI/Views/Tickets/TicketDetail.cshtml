@@ -45,7 +45,7 @@
                         <div class="form-group">
                             <label>Üstlenen Kullanıcı</label>
                             <br />
-                           <label>@Model.Ticket.Owner.Name @Model.Ticket.Owner.LastName</label>
+                            <label>@Model.Ticket.Owner.Name @Model.Ticket.Owner.LastName</label>
                         </div>
                         <!-- /.form-group -->
                     </div>
@@ -64,6 +64,7 @@
             </div>
             <!-- /.card-body -->
         </div>
+
         <div class="chat_container">
             <div class="col-sm-12 message_section">
                 <div class="row">
@@ -93,35 +94,48 @@
                                 else
                                 {
                                     <li class="left clearfix admin_chat">
-                    <span class="chat-img1 float-right">
-                        <img src="https://g.hizliresim.com/lila-orkide" alt="User Avatar" class="img-circle">
-                    </span>
-                    <div class="chat-body1 clearfix">
-                        <p>
-                            @item.Body
-                        </p>
-                        <div class="chat_time float-left">@item.CreatedDate</div>
-                    </div>
-                </li>
+                                        <span class="chat-img1 float-right">
+                                            <img src="https://g.hizliresim.com/lila-orkide" alt="User Avatar" class="img-circle">
+                                        </span>
+                                        <div class="chat-body1 clearfix">
+                                            <p>
+                                                @item.Body
+                                            </p>
+                                            <div class="chat_time float-left">@item.CreatedDate</div>
+                                        </div>
+                                    </li>
                                 }
 
                             }
 
                         </ul>
                     </div><!--chat_area-->
-                    <div class="message_write">
-                        <textarea class="form-control" placeholder="Bir mesaj yaz."></textarea>
-                        <div class="clearfix"></div>
-                        <div class="chat_bottom">
-                            <a href="#" class="float-left upload_btn">
-                                <i class="fa fa-cloud-upload" aria-hidden="true"></i>
-                                Dosya Ekle
-                            </a>
-                            <a href="#" class="float-right btn btn-success">
-                                Gönder
-                            </a>
-                        </div>
+                    <div class="col-md-12">
+
                     </div>
+                    <!-- /.card -->
+
+                    @using (Html.BeginForm("Send", "Tickets", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="message_write">
+                            <textarea class="form-control" placeholder="Bir mesaj yaz." asp-for="SendMessage"></textarea>
+                            <div class="clearfix"></div>
+                            <div class="chat_bottom">
+                                <div id="actions" class="row">
+                                    <div class="col-lg-6">
+                                        <p>Upload one or more files using this form:</p>
+                                        <input type="file" asp-for="Files" name="Files" multiple />
+                                    </div>
+                                </div>
+                                <div class="row col-lg-12">
+                                    <button type="submit" class="btn btn-success">
+                                        Gönder
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
                 </div>
             </div> <!--message_section-->
         </div>

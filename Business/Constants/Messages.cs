@@ -32,5 +32,9 @@ namespace Business.Constants
         public static string TicketStatusAdd = "Kayıt durumu başarılı bir şekilde eklendi.";
         public static string TicketStatusUpdated = "Kayıt durumu başarılı bir şekilde güncellendi.";
         public static string TicketStatusDeleted = "Kayıt durumu başarılı bir şekilde silindi.";
+        internal static string ticketImagesAdded;
+        internal static string TicketImagesDeleted;
+
+        public static string TicketImagesUpdated { get; internal set; }
     }
 }

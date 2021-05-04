@@ -24,5 +24,6 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<TicketAttachement> TicketAttachements { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<TicketImages> TicketImages { get; set;  }
     }
 }

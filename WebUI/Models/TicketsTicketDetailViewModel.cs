@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Entities.Concrete;
+using Microsoft.AspNetCore.Http;
 
 namespace WebUI.Models
 {
@@ -12,5 +13,9 @@ namespace WebUI.Models
 
         public Ticket Ticket { get; set; }
         public List<TicketMessage> TicketMessages { get; set; }
+
+        public string SendMessage { get; set; }
+        public List<IFormFile> Files { get; set; }
+
     }
 }

@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Core.Entities;
 using Core.Entities.Concrete;
+using Microsoft.AspNetCore.Http;
 
 namespace Entities.Concrete
 {
@@ -29,5 +30,6 @@ namespace Entities.Concrete
         public DateTime CreatedDate { get; set; }
         public DateTime? CompletedDate { get; set; }
         public int CustomerId { get; set; }
+        
     }
 }
