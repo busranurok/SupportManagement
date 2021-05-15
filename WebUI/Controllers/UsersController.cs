@@ -122,7 +122,9 @@ namespace WebUI.Controllers
         {
 
             var user = _authService.Login(new UserForLoginDto() { Email = model.UserName, Password = model.Password });
+            var fullname = user.Data.Name + " " + user.Data.LastName;
             HttpContext.Session.SetInt32("UserId", user.Data.Id);
+            HttpContext.Session.SetString("FullName", fullname);
 
             if (!user.Success)
             {

@@ -8,9 +8,14 @@
             <Node name="DataAccess" expanded="True">
               <Node name="Concrete" expanded="True">
                 <Node name="EntityFramework" expanded="True">
-                  <Node name="Contexts" expanded="True">
-                    <Node name="SupportManagementContext.cs" selected="True" />
-                  </Node>
+                  <Node name="Contexts" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+            <Node name="WebUI" expanded="True">
+              <Node name="Views" expanded="True">
+                <Node name="Shared" expanded="True">
+                  <Node name="_Layout.cshtml" selected="True" />
                 </Node>
               </Node>
             </Node>
