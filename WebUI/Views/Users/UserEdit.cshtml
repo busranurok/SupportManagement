@@ -1,5 +1,61 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model WebUI.Models.UsersUserEditViewModel
+
 @{
+    ViewData["Title"] = "Kullanıcı Ekleme";
+    var customers = (List<Customer>)ViewBag.Customers;
+    var customerDropDownData = new List<SelectListItem>();
+
+    customerDropDownData.Add(new SelectListItem() { Text = "Seçiniz...", Value = "0" });
+
+    foreach (var customer in customers)
+    {
+        var item = new SelectListItem();
+        item.Text = customer.Title;
+        item.Value = customer.Id.ToString();
+        customerDropDownData.Add(item);
+    }
+
+}
+
+
+@using (Html.BeginForm("UserEdit", "Users", FormMethod.Post))
+{
+<div class="card-body">
+    <div class="form-group">
+        <input asp-for="Id" type="text" class="form-control" hidden>
+    </div>
+    <div class="form-group">
+        <strong>Kullanıcı Adı: </strong>
+        <input asp-for="Name" type="text" class="form-control" placeholder="Adınızı giriniz...">
+    </div>
+    <div class="form-group">
+        <strong>Kullanıcı Soyadı: </strong>
+        <input asp-for="LastName" type="text" class="form-control" placeholder="Soyadınızı giriniz...">
+    </div>
+    <div class="form-group">
+        <strong>Email: </strong>
+        <input asp-for="Email" type="text" class="form-control" placeholder="Email adresini giriniz...">
+    </div>
+    <div class="form-group">
+        <strong>Şifre: </strong>
+        <input asp-for="Password" type="password" class="form-control" placeholder="Şifrenizi giriniz...">
+    </div>
+    <div class="form-group">
+        <strong>Aktif: </strong>
+        <input asp-for="IsActive" type="checkbox" />
+    </div>
+    <div class="form-group">
+        <strong>Admin: </strong>
+        <input asp-for="IsAdmin" type="checkbox" />
+    </div>
+    <div class="form-group">
+        <strong>Müşteri: </strong>
+        @Html.DropDownListFor(c => c.CustomerId, customerDropDownData, htmlAttributes: new { @class = "form-control" })
+    </div>
+</div>
+    <!-- /.card-body -->
+
+    <div class="card-footer">
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
 }

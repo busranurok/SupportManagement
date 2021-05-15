@@ -1,5 +1,25 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model WebUI.Models.CustomersCustomerDetailViewModel
+
 @{
+    ViewData["Title"] = "Müşteri Ekleme";
 }
+
+<div class="card-body">
+    <div class="form-group">
+        <strong>Müşteri Vergi Numarası: </strong>
+        <label for="exampleInputEmail1">@Model.Customer.TaxNo</label>
+    </div>
+    <div class="form-group">
+        <strong>Müşteri İsmi: </strong>
+        <label for="exampleInputPassword1">@Model.Customer.Title</label>
+    </div>
+    <div class="form-group">
+        <strong>Müşteri Adresi: </strong>
+        <label for="exampleInputPassword1">@Model.Customer.Address</label>
+    </div>
+    <div class="form-group">
+        <strong>Müşteri Oluşturma Tarihi: </strong>
+        <label for="exampleInputPassword1">@Model.Customer.CreatedDate</label>
+    </div>
+</div>
+    <!-- /.card-body -->

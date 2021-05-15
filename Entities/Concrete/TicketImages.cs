@@ -11,7 +11,7 @@ namespace Entities.Concrete
 
         public int Id { get; set; }
         public string ImagePath { get; set; }
-        public object MyProperty { get; set; }
+        public string ImageName { get; set; }
         public DateTime CreatedDate { get; set; }
         public int TicketId { get; set; }
     }

@@ -46,6 +46,11 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<EfTicketTypeDal>().As<ITicketTypeDal>().SingleInstance();
 
 
+            builder.RegisterType<TicketImageManager>().As<ITicketImageService>().SingleInstance();
+            builder.RegisterType<EfTicketImageDal>().As<ITicketImageDal>().SingleInstance();
+
+
+
             builder.RegisterType<AuthManager>().As<IAuthService>().SingleInstance();
 
             builder.RegisterType<JwtHelper>().As<ITokenHelper>().SingleInstance();

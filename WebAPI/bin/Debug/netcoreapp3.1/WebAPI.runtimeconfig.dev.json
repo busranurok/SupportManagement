@@ -1,8 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "/Users/hbo/.dotnet/store/|arch|/|tfm|",
-      "/Users/hbo/.nuget/packages"
-    ]
-  }
-}

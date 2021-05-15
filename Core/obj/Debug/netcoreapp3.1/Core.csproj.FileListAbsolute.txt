@@ -10,7 +10,6 @@
 /Users/hbo/Desktop/netProjects/SupportManagement/Core/bin/Debug/netcoreapp3.1/Core.deps.json
 /Users/hbo/Desktop/netProjects/SupportManagement/Core/bin/Debug/netcoreapp3.1/Core.dll
 /Users/hbo/Desktop/netProjects/SupportManagement/Core/bin/Debug/netcoreapp3.1/Core.pdb
-/Users/hbo/Desktop/netProjects/SupportManagement/Core/obj/Debug/netcoreapp3.1/Core.csprojAssemblyReference.cache
 /Users/hbo/Desktop/netProjects/SupportManagement/Core/obj/Debug/netcoreapp3.1/Core.AssemblyInfoInputs.cache
 /Users/hbo/Desktop/netProjects/SupportManagement/Core/obj/Debug/netcoreapp3.1/Core.AssemblyInfo.cs
 /Users/hbo/Desktop/netProjects/SupportManagement/Core/obj/Debug/netcoreapp3.1/Core.csproj.CoreCompileInputs.cache

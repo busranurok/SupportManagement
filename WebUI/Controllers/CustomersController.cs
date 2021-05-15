@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using WebUI.Models;
 
@@ -40,20 +41,57 @@ namespace WebUI.Controllers
         }
 
 
-        public IActionResult CustomerDetail()
+        public IActionResult CustomerDetail(int customerId)
+        {
+            var customer = _customerService.GetById(customerId);
+            var model = new CustomersCustomerDetailViewModel();
+            model.Customer = customer.Data;
+
+            return View(model);
+        }
+
+        //ekranı göstermek
+        [HttpGet]
+        public IActionResult CustomerInsert()
         {
             return View();
         }
 
-        public IActionResult CustomerEdit()
+        //ekrandaki veriyi almak için
+        public IActionResult CustomerInsert(CustomersCustomerInsertViewModel model)
         {
-            return View();
+            var customer = new Customer();
+            customer = model.Customer;
+            _customerService.Add(customer);
+            //aynı controller içerisinde olduğum için controller parametresini vermeme gerek yok
+            return RedirectToAction("GetAllCustomers", "Customers");
+
         }
 
 
-        public IActionResult CustomerDelete()
+        [HttpGet]
+        public IActionResult CustomerEdit(int customerId)
         {
-            return View();
+            var customer =_customerService.GetById(customerId).Data;
+            var model = new CustomersCustomerEditViewModel();
+            model.Customer = customer;
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult CustomerEdit(CustomersCustomerEditViewModel model)
+        {
+            _customerService.Update(model.Customer);
+            return RedirectToAction("CustomerList");
+        }
+
+       
+
+        public IActionResult CustomerDelete(int customerId)
+        {
+            var customer = _customerService.GetById(customerId);
+            _customerService.Delete(customer.Data);
+            return RedirectToAction("CustomerList");
         }
     }
 }

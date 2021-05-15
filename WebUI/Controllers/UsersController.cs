@@ -8,6 +8,7 @@ using WebUI.Models;
 using Microsoft.AspNetCore.Http;
 using Core.Utilities.Hashing;
 using Entities.DTOs;
+using Core.Entities.Concrete;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -17,11 +18,13 @@ namespace WebUI.Controllers
     {
         IUserService _userService;
         IAuthService _authService;
+        ICustomerService _customerService;
 
-        public UsersController(IUserService userService, IAuthService authService)
+        public UsersController(IUserService userService, IAuthService authService, ICustomerService customerService)
         {
             _userService = userService;
             _authService = authService;
+            _customerService = customerService;
         }
 
 
@@ -43,21 +46,67 @@ namespace WebUI.Controllers
             return Json(data);
         }
 
-        public IActionResult UserDetail()
+        public IActionResult UserDetail(int userId)
         {
-            return View();
+            var user  = _userService.GetById(userId);
+            var model = new UsersUserDetailViewModel();
+            model.User = user.Data;
+            if (user.Data.CustomerId > 0)
+            {
+                var customer = _customerService.GetById(user.Data.CustomerId);
+                model.CustomerName = customer.Data.Title;
+            }
+            return View(model);
         }
 
 
         public IActionResult UserEdit()
         {
+            var customers = _customerService.GetAllCustomers();
+            ViewBag.Customers = customers.Data;
             return View();
         }
 
-
-        public IActionResult UserDelete()
+        [HttpPost]
+        public IActionResult UserEdit(UsersUserEditViewModel model)
         {
+            var user = _userService.GetById(model.Id);
+            user.Data.Email = model.Email;
+            user.Data.IsActive = model.IsActive;
+            user.Data.IsAdmin = model.IsAdmin;
+            user.Data.LastName = model.LastName;
+            user.Data.Name = model.Name;
+            user.Data.CustomerId = model.CustomerId;
+
+            _userService.Update(user.Data);
+
+            return RedirectToAction("UserList");
+        }
+
+        public IActionResult UserInsert()
+        {
+            var customers = _customerService.GetAllCustomers();
+            ViewBag.Customers = customers.Data;
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult UserInsert(UsersUserInsertViewModel model)
+        {
+            var userForRegisterDto = new UserForRegisterDto();
+            userForRegisterDto.Email = model.Email;
+            userForRegisterDto.LastName = model.LastName;
+            userForRegisterDto.Name = model.Name;
+            userForRegisterDto.Password = model.Password;
+            _authService.Register(userForRegisterDto);
+            return View();
+        }
+
+        public IActionResult UserDelete(int userId)
+        {
+            var user = _userService.GetById(userId);
+            _userService.Delete(user.Data);
+            return RedirectToAction("UserList");
         }
 
 
@@ -83,6 +132,18 @@ namespace WebUI.Controllers
 
             return RedirectToAction("Index", "Home");
 
+        }
+
+        public IActionResult Profile()
+        {
+            var id = HttpContext.Session.GetInt32("UserId").Value;
+            return RedirectToAction("UserDetail", new { userId = id});
+        }
+
+        public IActionResult Exit()
+        {
+            HttpContext.Session.SetInt32("UserId", 0);
+            return RedirectToAction("Login");
         }
     }
 }

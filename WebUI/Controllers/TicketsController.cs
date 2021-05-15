@@ -17,10 +17,14 @@ namespace WebUI.Controllers
     public class TicketsController : Controller
     {
         ITicketService _ticketService;
+        ITicketImageService _ticketImageService;
+        ITicketMessageService _ticketMessageService;
 
-        public TicketsController(ITicketService ticketService)
+        public TicketsController(ITicketService ticketService, ITicketImageService ticketImageService, ITicketMessageService ticketMessageService)
         {
             _ticketService = ticketService;
+            _ticketImageService = ticketImageService;
+            _ticketMessageService = ticketMessageService;
         }
 
         // GET: /<controller>/
@@ -77,7 +81,6 @@ namespace WebUI.Controllers
             ticket.CreatedUserId = HttpContext.Session.GetInt32("UserId").Value;
             ticket.OwnerId = null;
             ticket.TicketStatusId = 1;
-            ticket.TicketTypeId = 1;
             _ticketService.Add(ticket);
             //aynı controller içerisinde olduğum için controller parametresini vermeme gerek yok
             return RedirectToAction("GetAllTickets", "Tickets");
@@ -96,10 +99,12 @@ namespace WebUI.Controllers
         [HttpGet]
         public IActionResult GetSummaryInformation()
         {
+            var currentUserId = HttpContext.Session.GetInt32("UserId").Value;
             var data = new LayoutTicketInformationModel();
-            data.AllTicketCount = 11;
-            data.MyTicketCount = 22;
-            data.OpenTicketCount = 66;
+            
+            data.AllTicketCount = _ticketService.GetAllTickets().Data.Count(); ;
+            data.MyTicketCount = _ticketService.GetTicketByFilters(new List<Expression<Func<Ticket, bool>>>() { x => x.OwnerId == currentUserId }).Data.Count();
+            data.OpenTicketCount = _ticketService.GetTicketByFilters(new List<Expression<Func<Ticket, bool>>>() { x => x.TicketStatusId == 1 }).Data.Count();
 
             return Json(data);
         }
@@ -260,10 +265,30 @@ namespace WebUI.Controllers
                     {
                         formFile.CopyTo(stream);
                     }
+
+                    #region Creating TicketImage
+                    var ticketImage = new TicketImages();
+                    ticketImage.CreatedDate = DateTime.Now;
+                    ticketImage.ImageName = formFile.FileName;
+                    ticketImage.ImagePath = fileNameWithPath;
+                    ticketImage.TicketId = model.TicketId;
+                    _ticketImageService.Add(ticketImage);
+                    #endregion
+
+                   
                 }
 
             }
 
+            #region Creating TicketMessage
+            var ticketMessage = new TicketMessage();
+            ticketMessage.Body = model.SendMessage;
+            ticketMessage.CreatedDate = DateTime.Now;
+            ticketMessage.CreatedUserId = HttpContext.Session.GetInt32("UserId").Value;
+            ticketMessage.TicketId = model.TicketId;
+            ticketMessage.TicketStatusId = model.TicketState;
+            _ticketMessageService.Add(ticketMessage);
+            #endregion
 
             return RedirectToAction("GetAllTickets");
         }

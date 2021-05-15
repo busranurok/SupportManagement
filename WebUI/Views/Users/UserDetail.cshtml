@@ -1,5 +1,33 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model WebUI.Models.UsersUserDetailViewModel
+
 @{
+    ViewData["Title"] = "Kullanıcı Ekleme";
 }
+
+<div class="card-body">
+    <div class="form-group">
+        <strong>Müşteri :</strong>
+        <label  for="exampleInputEmail1">@Model.CustomerName</label>
+    </div>
+    <div class="form-group">
+        <strong>Email :</strong>
+        <label  for="exampleInputPassword1">@Model.User.Email</label>
+    </div>
+    <div class="form-group">
+        <strong>Ad:</strong>
+        <label  for="exampleInputPassword1">@Model.User.Name</label>
+    </div>
+    <div class="form-group">
+        <strong>Soyad :</strong>
+        <label  for="exampleInputPassword1">@Model.User.LastName</label>
+    </div>
+    <div class="form-group">
+        <strong>Admin :</strong>
+        <input type="checkbox" asp-for="User.IsAdmin"  value="@Model.User.IsAdmin" disabled />
+    </div>
+    <div class="form-group">
+        <strong>Oluşturulma Tarihi :</strong>
+        <label  for="exampleInputPassword1">@Model.User.CreatedDate</label>
+    </div>
+</div>
+<!-- /.card-body -->

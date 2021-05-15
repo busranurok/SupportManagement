@@ -11,11 +11,14 @@ namespace WebUI.Models
         {
         }
 
+        //ticket detayını ekrana basmak için bbu verilere ihtiyac duyarz.
         public Ticket Ticket { get; set; }
         public List<TicketMessage> TicketMessages { get; set; }
-
+        //ticket mesagesi gönderildiğinde suucuya göndermek istediğimiz veriler bunkardır!
         public string SendMessage { get; set; }
         public List<IFormFile> Files { get; set; }
+        public int TicketId { get; set; }
+        public int TicketState { get; set; }
 
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Core.Entities;
 using Core.Entities.Concrete;
@@ -30,6 +31,7 @@ namespace Entities.Concrete
         public DateTime CreatedDate { get; set; }
         public DateTime? CompletedDate { get; set; }
         public int CustomerId { get; set; }
+        public List<TicketImages> Images { get; set; }
         
     }
 }
