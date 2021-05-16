@@ -13,7 +13,9 @@ namespace DataAccess.Concrete.EntityFramework
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.UseSqlServer(@"Server = 127.0.0.1; Database = SupportManagement; User Id = sa; Password =MyPass@word");
             
+
             //optionsBuilder.UseSqlServer(@"Server = *; Database = *; User Id = *; Password = *");
         }
 
