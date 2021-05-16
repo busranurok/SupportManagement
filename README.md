@@ -15,8 +15,9 @@ Teknik destek süreci olan firmalar için bu süreci daha ölçekli bir şekilde
 
 
 <img src="https://github.com/busranurok/SupportManagement/blob/main/screenshots/AllTickets.png" width="575" height="316" style="margin-top:10px; padding:10px;" align="left" >
-
+-
 <img src="https://github.com/busranurok/SupportManagement/blob/main/screenshots/CustomerDetail.png" width="575" height="316" style="margin-top:10px; padding:10px;" align="left">
+-
 <img src="https://github.com/busranurok/SupportManagement/blob/main/screenshots/CustomerList.png" width="575" height="316" style="margin-top:10px;" align="left">
 <img src="https://github.com/busranurok/SupportManagement/blob/main/screenshots/InsertCustomer.png" width="575" height="316" style="margin-top:10px;" align="left">
 <img src="https://github.com/busranurok/SupportManagement/blob/main/screenshots/InsertUser.png" width="575" height="316" style="margin-top:10px;" align="left" >
