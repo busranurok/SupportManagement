@@ -4,11 +4,13 @@ Support Management
 
 Teknik destek süreci olan firmalar için bu süreci daha ölçekli bir şekilde yönetmek ve düzenlemek adına geliştirmekte olduğum Web tabanlı bir uygulamadır.
 
-## Kullanılan Teknolojiler
+## Kullanılan Teknoloji ve Kütüphaneler
 - .Net Core (API, MVC UI)
 - Entity Framework
-- MsSql
+- MsSql(Docker Image  mcr.microsoft.com/azure-sql-edge)
 - N-Tier Architecture
+- HTML,CSS,Bootstrap,Javascript,Jquery
+- Fluent Validation,Autofac
 
 
 ## Ekran Görüntüleri
