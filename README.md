@@ -7,7 +7,7 @@ Teknik destek süreci olan firmalar için bu süreci daha ölçekli bir şekilde
 ## Kullanılan Teknoloji ve Kütüphaneler
 - .Net Core (API, MVC UI)
 - Entity Framework
-- MsSql(Docker Image  mcr.microsoft.com/azure-sql-edge)
+- MSSQL(Docker Image  mcr.microsoft.com/azure-sql-edge)
 - N-Tier Architecture
 - HTML,CSS,Bootstrap,Javascript,Jquery
 - Fluent Validation,Autofac
